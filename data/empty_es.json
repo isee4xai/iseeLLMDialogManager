@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "scope": "tree",
+  "id": "c86ab17b-e156-4475-b6ba-2ca82265fb52",
+  "Instance": "Explanation Experience",
+  "description": "",
+  "root": "49f857ce-732a-4c44-8fae-b5cfd6fae15c",
+  "properties": {},
+  "custom_nodes": [],
+  "nodes": {
+    "49f857ce-732a-4c44-8fae-b5cfd6fae15c": {
+      "id": "49f857ce-732a-4c44-8fae-b5cfd6fae15c",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 12,
+        "y": 84
+      },
+      "firstChild": {
+        "Id": "14c63656-ffd4-4161-990f-65b6dca2a9cb",
+        "Next": null
+      }
+    },
+    "14c63656-ffd4-4161-990f-65b6dca2a9cb": {
+      "id": "14c63656-ffd4-4161-990f-65b6dca2a9cb",
+      "Concept": "Succeeder",
+      "Instance": "Succeeder",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 12,
+        "y": 180
+      }
+    }
+  },
+  "display": {
+    "camera_x": 720,
+    "camera_y": 394.5,
+    "camera_z": 1,
+    "x": 12,
+    "y": 0
+  }
+}

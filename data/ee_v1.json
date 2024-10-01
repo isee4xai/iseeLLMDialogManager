@@ -1,0 +1,606 @@
+{
+  "version": "0.1.0",
+  "scope": "tree",
+  "id": "d762f95a-f50c-4bb3-ad7f-7b50e94de3bc",
+  "Instance": "Explanation Experience",
+  "description": "",
+  "root": "e6edd466-088b-4fb2-b633-8a28f28259bd",
+  "properties": {},
+  "custom_nodes": [
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "World Modifier",
+      "category": "action",
+      "title": "World Modifier",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Question",
+      "category": "action",
+      "title": "Question",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Information",
+      "category": "action",
+      "title": "Information",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Equal",
+      "category": "condition",
+      "title": "Equal",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Need Question",
+      "category": "action",
+      "title": "Need Question",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Target Question",
+      "category": "action",
+      "title": "Target Question",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Initialiser",
+      "category": "action",
+      "title": "Initialiser",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Greeter",
+      "category": "action",
+      "title": "Greeter",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Usecase Modifier",
+      "category": "action",
+      "title": "Usecase Modifier",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Knowledge Question",
+      "category": "action",
+      "title": "Knowledge Question",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Explaination Strategy",
+      "category": "action",
+      "title": "Explaination Strategy",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Strategy",
+      "category": "composite",
+      "title": "Strategy",
+      "description": null,
+      "properties": {}
+    }
+  ],
+  "nodes": {
+    "547d2d4b-501e-481e-86fe-f7b379e7a2bf": {
+      "id": "547d2d4b-501e-481e-86fe-f7b379e7a2bf",
+      "Concept": "Equal",
+      "Instance": "if persona incomplete",
+      "description": "",
+      "properties": {
+        "persona": "False",
+        "proceed": "True"
+      },
+      "display": {
+        "x": -96,
+        "y": 396
+      }
+    },
+    "e6edd466-088b-4fb2-b633-8a28f28259bd": {
+      "id": "e6edd466-088b-4fb2-b633-8a28f28259bd",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 120,
+        "y": -144
+      },
+      "firstChild": {
+        "Id": "6415e6fe-914a-453f-9a3c-510a824cff83",
+        "Next": {
+          "Id": "a45fc81f-84e8-4e84-8978-5fa37607f3d3",
+          "Next": {
+            "Id": "ac29b224-a000-4c48-93ad-3e271290eb18",
+            "Next": null
+          }
+        }
+      }
+    },
+    "7a5b9686-e70b-4bba-82b3-c8b33e1207eb": {
+      "id": "7a5b9686-e70b-4bba-82b3-c8b33e1207eb",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 204,
+        "y": 288
+      },
+      "firstChild": {
+        "Id": "547d2d4b-501e-481e-86fe-f7b379e7a2bf",
+        "Next": {
+          "Id": "ff20eb95-0ae2-4ebf-9c3a-32d18f3f2fe1",
+          "Next": {
+            "Id": "17be3d90-b2f9-4eca-8df6-8496a6ca6203",
+            "Next": {
+              "Id": "0d2e8ce8-44ea-4d4b-8d98-b8bb36bb85d7",
+              "Next": {
+                "Id": "e317b1c1-0bd3-4498-9b8c-3225bc82a9b2",
+                "Next": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "90f0fb3e-892b-44d1-bd5d-18bcd5dfc6f3": {
+      "id": "90f0fb3e-892b-44d1-bd5d-18bcd5dfc6f3",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 924,
+        "y": 300
+      },
+      "firstChild": {
+        "Id": "2362a808-1e1c-4655-bd9e-48a50d23716e",
+        "Next": {
+          "Id": "bad34afa-9210-4cd0-8149-bea2a45bc7b7",
+          "Next": {
+            "Id": "0d983faf-0b9e-45de-8c80-96f9440f6e48",
+            "Next": {
+              "Id": "a265eede-8bc5-4b0b-8c41-01acf8126c04",
+              "Next": {
+                "Id": "09a9afdc-5b17-4eab-9bad-6ee40e3f1d10",
+                "Next": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "2362a808-1e1c-4655-bd9e-48a50d23716e": {
+      "id": "2362a808-1e1c-4655-bd9e-48a50d23716e",
+      "Concept": "Equal",
+      "Instance": "if need incomplete",
+      "description": "",
+      "properties": {
+        "need": "False",
+        "persona": "True"
+      },
+      "display": {
+        "x": 720,
+        "y": 372
+      }
+    },
+    "bad34afa-9210-4cd0-8149-bea2a45bc7b7": {
+      "id": "bad34afa-9210-4cd0-8149-bea2a45bc7b7",
+      "Concept": "Need Question",
+      "Instance": "Ask Need",
+      "description": "",
+      "properties": {
+        "variable": "selected_need",
+        "question": "Please select a question that is most likely to express your need for explanation?",
+        "question_data": "UserQuestion"
+      },
+      "display": {
+        "x": 804,
+        "y": 444
+      }
+    },
+    "0d983faf-0b9e-45de-8c80-96f9440f6e48": {
+      "id": "0d983faf-0b9e-45de-8c80-96f9440f6e48",
+      "Concept": "Target Question",
+      "Instance": "Ask Target",
+      "description": "",
+      "properties": {
+        "variable": "target",
+        "question": "Please tell me the data instance for which you need an explanation? Please enter an array with comma separated values in the following order of features.",
+        "question_data": "FeatureNames"
+      },
+      "display": {
+        "x": 924,
+        "y": 492
+      }
+    },
+    "09a9afdc-5b17-4eab-9bad-6ee40e3f1d10": {
+      "id": "09a9afdc-5b17-4eab-9bad-6ee40e3f1d10",
+      "Concept": "World Modifier",
+      "Instance": "Set need complete",
+      "description": "",
+      "properties": {
+        "need": "True"
+      },
+      "display": {
+        "x": 1116,
+        "y": 432
+      }
+    },
+    "65adfe05-cdb4-4fd7-80f1-59c813144eb0": {
+      "id": "65adfe05-cdb4-4fd7-80f1-59c813144eb0",
+      "Concept": "Greeter",
+      "Instance": "Greet",
+      "description": "",
+      "properties": {
+        "variable": "proceed_response"
+      },
+      "display": {
+        "x": -156,
+        "y": 144
+      }
+    },
+    "148fd7ec-e680-46e8-b114-747d70c261a8": {
+      "id": "148fd7ec-e680-46e8-b114-747d70c261a8",
+      "Concept": "Initialiser",
+      "Instance": "Initialise",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -804,
+        "y": 168
+      }
+    },
+    "dd78221e-fed4-459c-835a-81fa676feca9": {
+      "id": "dd78221e-fed4-459c-835a-81fa676feca9",
+      "Concept": "Usecase Modifier",
+      "Instance": "Set matching persona",
+      "description": "",
+      "properties": {
+        "matching_persona": "None"
+      },
+      "display": {
+        "x": 156,
+        "y": 684
+      }
+    },
+    "a45fc81f-84e8-4e84-8978-5fa37607f3d3": {
+      "id": "a45fc81f-84e8-4e84-8978-5fa37607f3d3",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -60,
+        "y": 36
+      },
+      "firstChild": {
+        "Id": "0b1b038d-4382-46ce-bf42-75d5ec11ab78",
+        "Next": {
+          "Id": "65adfe05-cdb4-4fd7-80f1-59c813144eb0",
+          "Next": {
+            "Id": "b6b9c20e-2c61-47a1-b332-e6679a53361f",
+            "Next": null
+          }
+        }
+      }
+    },
+    "b6b9c20e-2c61-47a1-b332-e6679a53361f": {
+      "id": "b6b9c20e-2c61-47a1-b332-e6679a53361f",
+      "Concept": "World Modifier",
+      "Instance": "Set proceed complete",
+      "description": "",
+      "properties": {
+        "proceed": "True"
+      },
+      "display": {
+        "x": 36,
+        "y": 144
+      }
+    },
+    "e317b1c1-0bd3-4498-9b8c-3225bc82a9b2": {
+      "id": "e317b1c1-0bd3-4498-9b8c-3225bc82a9b2",
+      "Concept": "World Modifier",
+      "Instance": "Set persona complete",
+      "description": "",
+      "properties": {
+        "persona": "True"
+      },
+      "display": {
+        "x": 492,
+        "y": 408
+      }
+    },
+    "ff20eb95-0ae2-4ebf-9c3a-32d18f3f2fe1": {
+      "id": "ff20eb95-0ae2-4ebf-9c3a-32d18f3f2fe1",
+      "Concept": "Knowledge Question",
+      "Instance": "Ask AI Knowledge",
+      "description": "",
+      "properties": {
+        "question": "How would you describe your AI knowledge level?",
+        "variable": "ai_level",
+        "question_data": "KnowledgeLevel"
+      },
+      "display": {
+        "x": -12,
+        "y": 456
+      }
+    },
+    "17be3d90-b2f9-4eca-8df6-8496a6ca6203": {
+      "id": "17be3d90-b2f9-4eca-8df6-8496a6ca6203",
+      "Concept": "Knowledge Question",
+      "Instance": "Ask Domain Knowledge",
+      "description": "",
+      "properties": {
+        "question": "How would you describe your domain knowledge level?",
+        "variable": "domain_level",
+        "question_data": "KnowledgeLevel"
+      },
+      "display": {
+        "x": 120,
+        "y": 516
+      }
+    },
+    "6415e6fe-914a-453f-9a3c-510a824cff83": {
+      "id": "6415e6fe-914a-453f-9a3c-510a824cff83",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -720,
+        "y": 60
+      },
+      "firstChild": {
+        "Id": "148fd7ec-e680-46e8-b114-747d70c261a8",
+        "Next": {
+          "Id": "45f504f2-4e52-44a3-943a-63b58114da94",
+          "Next": null
+        }
+      }
+    },
+    "45f504f2-4e52-44a3-943a-63b58114da94": {
+      "id": "45f504f2-4e52-44a3-943a-63b58114da94",
+      "Concept": "World Modifier",
+      "Instance": "Set initialise complete",
+      "description": "",
+      "properties": {
+        "initialise": "True"
+      },
+      "display": {
+        "x": -624,
+        "y": 168
+      }
+    },
+    "0b1b038d-4382-46ce-bf42-75d5ec11ab78": {
+      "id": "0b1b038d-4382-46ce-bf42-75d5ec11ab78",
+      "Concept": "Equal",
+      "Instance": "if initialised",
+      "description": "",
+      "properties": {
+        "initialise": "True",
+        "proceed": "False"
+      },
+      "display": {
+        "x": -324,
+        "y": 144
+      }
+    },
+    "ac29b224-a000-4c48-93ad-3e271290eb18": {
+      "id": "ac29b224-a000-4c48-93ad-3e271290eb18",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 552,
+        "y": -24
+      },
+      "firstChild": {
+        "Id": "3425b766-2371-4fc1-83b0-4e96e79f939d",
+        "Next": {
+          "Id": "0e5b9cc8-a969-4599-8bb5-81e35a72e1a9",
+          "Next": {
+            "Id": "25e960a6-6736-49c7-8107-70f816e815d9",
+            "Next": null
+          }
+        }
+      }
+    },
+    "3425b766-2371-4fc1-83b0-4e96e79f939d": {
+      "id": "3425b766-2371-4fc1-83b0-4e96e79f939d",
+      "Concept": "RepeatUntilSuccess",
+      "Instance": "Repeat Until Success",
+      "description": "",
+      "properties": {
+        "maxLoop": -1
+      },
+      "display": {
+        "x": 252,
+        "y": 192
+      },
+      "firstChild": {
+        "Id": "7a5b9686-e70b-4bba-82b3-c8b33e1207eb",
+        "Next": null
+      }
+    },
+    "0d2e8ce8-44ea-4d4b-8d98-b8bb36bb85d7": {
+      "id": "0d2e8ce8-44ea-4d4b-8d98-b8bb36bb85d7",
+      "Concept": "Priority",
+      "Instance": "Priority",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 348,
+        "y": 492
+      },
+      "firstChild": {
+        "Id": "9e16fc5c-9fa0-4bbb-b940-8a33017693eb",
+        "Next": {
+          "Id": "0627c92a-9f01-4718-8237-085e69c84fe3",
+          "Next": null
+        }
+      }
+    },
+    "0627c92a-9f01-4718-8237-085e69c84fe3": {
+      "id": "0627c92a-9f01-4718-8237-085e69c84fe3",
+      "Concept": "Failer",
+      "Instance": "Inform no matching persona",
+      "description": "",
+      "properties": {
+        "message": "We could not find a matching persona for the details provided. Please try again."
+      },
+      "display": {
+        "x": 504,
+        "y": 612
+      }
+    },
+    "9e16fc5c-9fa0-4bbb-b940-8a33017693eb": {
+      "id": "9e16fc5c-9fa0-4bbb-b940-8a33017693eb",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {
+        "message": "Thanks. We have found a matching persona for you. Your persona for this session is",
+        "variable": "matching_persona"
+      },
+      "display": {
+        "x": 264,
+        "y": 588
+      },
+      "firstChild": {
+        "Id": "dd78221e-fed4-459c-835a-81fa676feca9",
+        "Next": {
+          "Id": "6d9e985b-eaf8-4f6f-b06d-f3c3c75337fb",
+          "Next": null
+        }
+      }
+    },
+    "6d9e985b-eaf8-4f6f-b06d-f3c3c75337fb": {
+      "id": "6d9e985b-eaf8-4f6f-b06d-f3c3c75337fb",
+      "Concept": "Succeeder",
+      "Instance": "Inform matching persona",
+      "description": "",
+      "properties": {
+        "message": "Thank you. We found a matching persona for you."
+      },
+      "display": {
+        "x": 384,
+        "y": 684
+      }
+    },
+    "0e5b9cc8-a969-4599-8bb5-81e35a72e1a9": {
+      "id": "0e5b9cc8-a969-4599-8bb5-81e35a72e1a9",
+      "Concept": "RepeatUntilSuccess",
+      "Instance": "Repeat Until Success",
+      "description": "",
+      "properties": {
+        "maxLoop": -1
+      },
+      "display": {
+        "x": 924,
+        "y": 192
+      },
+      "firstChild": {
+        "Id": "90f0fb3e-892b-44d1-bd5d-18bcd5dfc6f3",
+        "Next": null
+      }
+    },
+    "a265eede-8bc5-4b0b-8c41-01acf8126c04": {
+      "id": "a265eede-8bc5-4b0b-8c41-01acf8126c04",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 1044,
+        "y": 552
+      },
+      "firstChild": {
+        "Id": "266fe7cf-bb85-4f06-81b0-32135fb635c9",
+        "Next": {
+          "Id": "85df0ee5-bfc9-4993-8806-6351457d2cdc",
+          "Next": null
+        }
+      }
+    },
+    "266fe7cf-bb85-4f06-81b0-32135fb635c9": {
+      "id": "266fe7cf-bb85-4f06-81b0-32135fb635c9",
+      "Concept": "Usecase Modifier",
+      "Instance": "Set matching intent",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 948,
+        "y": 636
+      }
+    },
+    "85df0ee5-bfc9-4993-8806-6351457d2cdc": {
+      "id": "85df0ee5-bfc9-4993-8806-6351457d2cdc",
+      "Concept": "Succeeder",
+      "Instance": "Inform matching intent",
+      "description": "",
+      "properties": {
+        "message": "Your persona is"
+      },
+      "display": {
+        "x": 1152,
+        "y": 636
+      }
+    },
+    "25e960a6-6736-49c7-8107-70f816e815d9": {
+      "id": "25e960a6-6736-49c7-8107-70f816e815d9",
+      "Concept": "Strategy",
+      "Instance": "Strategy",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 1428,
+        "y": 180
+      }
+    }
+  },
+  "display": {
+    "camera_x": 13.7000004760921,
+    "camera_y": 161.4000001102686,
+    "camera_z": 0.75,
+    "x": 120,
+    "y": -240
+  }
+}

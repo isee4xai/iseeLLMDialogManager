@@ -1,0 +1,44 @@
+{
+  "instance": "<bt_exec_IRI><node_id>NodeExecution",
+  "class": "<bt_exec_IRI>NodeExecution",
+  "<prov_IRI>startedAtTime" : {
+    "@type" : "<xml_IRI>dateTime",
+    "@value" : "<start_dt>"
+  },
+  "<prov_IRI>endedAtTime" : {
+    "@type" : "<xml_IRI>dateTime",
+    "@value" : "<end_dt>"
+  },
+  "<prov_IRI>generated": {
+    "instance": "<bt_exec_IRI><node_id>NodeExecutionOutput",
+    "class": "<bt_exec_IRI>NodeExecutionOutput",
+    "<bt_IRI>properties": {
+      "instance": "<bt_exec_IRI><node_id>NodeExecutionPropertyDict",
+      "class": "<bt_IRI>Dictionary",
+      "<bt_IRI>hasDictionaryMember": [
+        {
+          "instance": "<bt_exec_IRI><node_id>NodeExecutionProperty",
+          "class": "<bt_IRI>KeyObjectValuePair",
+          "<bt_IRI>pairKey": "<property_key>",
+          "<bt_IRI>pair_value_object": "<property_value>"
+        }
+      ]
+    }
+  },
+  "<prov_IRI>wasInformedBy": {
+    "instance": "<bt_exec_IRI><previous_node_id>NodeExecution",
+    "class": "<bt_exec_IRI>NodeExecution"
+  },
+  "<bt_exec_IRI>enacted": {
+    "instance": "<bt_exec_IRI><node_id>Node",
+    "class": "<bt_IRI><node_concept>"
+  },
+  "<bt_exec_IRI>outcome": {
+    "instance": "<bt_exec_IRI><node_id>NodeExecutionSuccessIndicator",
+    "class": "<bt_exec_IRI>NodeExecutionSuccessIndicator",
+    "<prov_IRI>value": {
+      "@type": "<xml_IRI>boolean",
+      "@value": "<success_indicator>"
+    }
+  }
+}

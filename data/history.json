@@ -1,0 +1,206 @@
+[
+    {
+        "id": "367cbcc6-2996-4b9a-882a-05904b42da5b",
+        "content": "Good Afternoon Anjana Wijekoon!<br>I am the iSee Chatbot for the Loan Approval System, Would you like to proceed?",
+        "responseType": "Free-Text",
+        "responseOptions": null,
+        "completed": "",
+        "dimension": "",
+        "intent": "",
+        "validators": null,
+        "answer": [],
+        "required": true
+    },
+    [
+        {
+            "id": "temp",
+            "content": "yes"
+        }
+    ],
+    {
+        "id": "b2b0a8e8-8f30-4d05-9148-6a40583630a3",
+        "content": "I would like to know a more about your knowledge of the system, can you select a user group from below that best describes you?",
+        "responseType": "Radio",
+        "responseOptions": [
+            {
+                "id": "http://www.w3id.org/iSeeOnto/explanationexperience/with_model/with_modelUserGroup_63986263bc0a2bb10eca8758",
+                "content": "<div class=\"persona\"><p class=\"persona-name\">Loan Applicant</p><p class=\"persona-prop\">AI Knowledge Level: No knowledge</p> <p class=\"persona-prop\">Domain Knowledge Level: No knowledge</p></div>"
+            },
+            {
+                "id": "http://www.w3id.org/iSeeOnto/explanationexperience/with_model/with_modelUserGroup_6398626bbc0a2bb10eca875e",
+                "content": "<div class=\"persona\"><p class=\"persona-name\">Trainee Loan Officer</p><p class=\"persona-prop\">AI Knowledge Level: No knowledge</p> <p class=\"persona-prop\">Domain Knowledge Level: Proficient</p></div>"
+            }
+        ],
+        "completed": "",
+        "dimension": "",
+        "intent": "",
+        "validators": null,
+        "answer": [],
+        "required": true
+    },
+    {
+        "id": "http://www.w3id.org/iSeeOnto/explanationexperience/with_model/with_modelUserGroup_63986263bc0a2bb10eca8758",
+        "content": "<div class=\"persona\"><p class=\"persona-name\">Loan Applicant</p><p class=\"persona-prop\">AI Knowledge Level: No knowledge</p> <p class=\"persona-prop\">Domain Knowledge Level: No knowledge</p></div>"
+    },
+    {
+        "id": "7510bb2a-b9d4-4381-81f9-4aa0219944f3",
+        "content": "<p>Here is your loan application</p>",
+        "responseType": "Free-Text",
+        "responseOptions": null,
+        "completed": "",
+        "dimension": "",
+        "intent": "",
+        "validators": null,
+        "answer": [],
+        "required": true
+    },
+    [
+        {
+            "id": "temp",
+            "content": "okay"
+        }
+    ],
+    {
+        "id": "cb985c59-1145-4ec1-83f9-d1eb92a19a65",
+        "content": "I want to understand what kind of explanation you want.  Select a question below if it is similar to what you would like to know, or tell me what you would like to know.",
+        "responseType": "Radio",
+        "responseOptions": [
+            {
+                "id": "http://www.w3id.org/iSeeOnto/explanationexperience/Loan_Approval_System/Loan_Approval_SystemUserQuestion_iq-704711",
+                "content": "What are the important features for the AI system?"
+            },
+            {
+                "id": "http://www.w3id.org/iSeeOnto/explanationexperience/Loan_Approval_System/Loan_Approval_SystemUserQuestion_iq-895131",
+                "content": "What features are used by the AI system? "
+            },
+            {
+                "id": "http://www.w3id.org/iSeeOnto/explanationexperience/Loan_Approval_System/Loan_Approval_SystemUserQuestion_iq-682061",
+                "content": "How to get a different outcome?"
+            },
+            {
+                "id": "http://www.w3id.org/iSeeOnto/explanationexperience/Loan_Approval_System/Loan_Approval_SystemUserQuestion_iq-910631",
+                "content": "How to change the instance to get a different outcome?"
+            }
+        ],
+        "completed": "",
+        "dimension": "",
+        "intent": "",
+        "validators": null,
+        "answer": [],
+        "required": true
+    },
+    {
+        "id": "http://www.w3id.org/iSeeOnto/explanationexperience/Loan_Approval_System/Loan_Approval_SystemUserQuestion_iq-895131",
+        "content": "What features are used by the AI system? "
+    },
+    {
+        "id": "66dd0924-7b59-41c2-b690-a2f613840c68",
+        "content": "<p>Here is an explanation from LIME Explainability Technique</p>",
+        "responseType": "Free-Text",
+        "responseOptions": null,
+        "completed": "",
+        "dimension": "",
+        "intent": "",
+        "validators": null,
+        "answer": [],
+        "required": true
+    },
+    [
+        {
+            "id": "temp",
+            "content": "okay"
+        }
+    ],
+    {
+        "id": "1582ff0f-11de-47d4-a639-d6b34c6ec2cd",
+        "content": "Would you like to answer a questionnaire to evaluate your experience with iSee?",
+        "responseType": "Free-Text",
+        "responseOptions": null,
+        "completed": "",
+        "dimension": "",
+        "intent": "",
+        "validators": null,
+        "answer": [],
+        "required": true
+    },
+    [
+        {
+            "id": "temp",
+            "content": "yes"
+        }
+    ],
+    {
+        "id": "http://www.w3id.org/iSeeOnto/explanationexperience/Loan_Approval_System/Loan_Approval_SystemQuestion_q-4f6b6944-c954-42eb-bfba-6bae1afe3106",
+        "content": "This explanation of how the AI model works has sufficient detail.",
+        "responseType": "Radio",
+        "responseOptions": [
+            {
+                "id": "res-33651",
+                "content": "I agree strongly"
+            },
+            {
+                "id": "res-612201",
+                "content": "I agree somewhat"
+            },
+            {
+                "id": "res-829031",
+                "content": "I\u2019m neutral about it"
+            },
+            {
+                "id": "res-610231",
+                "content": "I disagree somewhat"
+            },
+            {
+                "id": "res-455601",
+                "content": "I disagree strongly"
+            }
+        ],
+        "completed": "",
+        "dimension": "",
+        "intent": "",
+        "validators": null,
+        "answer": [],
+        "required": true
+    },
+    {
+        "id": "res-612201",
+        "content": "I agree somewhat"
+    },
+    {
+        "id": "http://www.w3id.org/iSeeOnto/explanationexperience/Loan_Approval_System/Loan_Approval_SystemQuestion_q-cd41edbb-c1df-4073-b85e-f811882b0400",
+        "content": "This explanation of how the AI model works seems complete.",
+        "responseType": "Radio",
+        "responseOptions": [
+            {
+                "id": "res-33651",
+                "content": "I agree strongly"
+            },
+            {
+                "id": "res-612201",
+                "content": "I agree somewhat"
+            },
+            {
+                "id": "res-829031",
+                "content": "I\u2019m neutral about it"
+            },
+            {
+                "id": "res-610231",
+                "content": "I disagree somewhat"
+            },
+            {
+                "id": "res-455601",
+                "content": "I disagree strongly"
+            }
+        ],
+        "completed": "",
+        "dimension": "",
+        "intent": "",
+        "validators": null,
+        "answer": [],
+        "required": true
+    },
+    {
+        "id": "res-829031",
+        "content": "I’m neutral about it"
+    }
+]

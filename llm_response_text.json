@@ -1,0 +1,13 @@
+<div>
+  <p>The explanation provided uses the LIME (Local Interpretable Model-agnostic Explanations) technique to highlight the most important words that contributed to the AI system's outcome. In the given instance, the AI system predicted a TMR (Tested, Not Tested Reason) with a probability of 0.713. The highlighted words in the text instance indicate their importance and contribution to this prediction.</p>
+  
+  <p>Here is a detailed breakdown of the explanation:</p>
+  
+  <ul>
+    <li><strong>Highlighted Words:</strong> The words "trees" and "cutting" are highlighted in red, indicating that they have a significant positive contribution to the TMR prediction. This means that the presence of these words in the text instance strongly influenced the AI system to predict TMR.</li>
+    <li><strong>Prediction Probabilities:</strong> The table on the left shows the prediction probabilities for different outcomes. The AI system predicted TMR with a probability of 0.713, which is the highest among the possible outcomes.</li>
+    <li><strong>Text Instance:</strong> The text instance provided is "InCompleteReason:Pole not climable due to trees UpstreamSpeed:,DownstreamSpeed:,Tested:0,NotTestedReason:Failed Install,DoorColor:,Questions:notes:Install complete, No access to dp as trees need cutting." The highlighted words within this text are the key factors that influenced the AI system's prediction.</li>
+  </ul>
+  
+  <p>If you need further clarification or a different type of explanation, please let me know!</p>
+</div>

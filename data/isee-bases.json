@@ -1,0 +1,21 @@
+{
+    "<ee_IRI>": "http://www.w3id.org/iSeeOnto/explanationexperience#",
+    "<case_IRI>": "http://www.w3id.org/iSeeOnto/explanationexperience/<casename>/",
+    "<aimodel_IRI>": "http://www.w3id.org/iSeeOnto/aimodel#",
+    "<aitask_IRI>": "https://purl.org/heals/eo#",
+    "<sio_IRI>": "http://semanticscience.org/resource/",
+    "<explainer_IRI>": "http://www.w3id.org/iSeeOnto/explainer#",
+    "<eo_IRI>": "https://purl.org/heals/eo#",
+    "<user_IRI>": "http://www.w3id.org/iSeeOnto/user#",
+    "<evaluation_IRI>": "http://www.w3id.org/iSeeOnto/evaluation#",
+    "<bt_IRI>": "https://www.w3id.org/iSeeOnto/BehaviourTree#",
+    "<bt_exec_IRI>": "https://www.w3id.org/iSeeOnto/BehaviourTreeExecution#",
+    "<ep_IRI>": "http://linkedu.eu/dedalo/explanationPattern.owl#",
+    "<ue_IRI>": "http://www.w3id.org/iSeeOnto/userevaluation#",
+    "<qual_IRI>": "http://sensornet.abdn.ac.uk/onts/Qual-O#",
+    "<rdfs_IRI>": "http://www.w3.org/2000/01/rdf-schema#",
+    "<aieval_IRI>": "http://www.w3id.org/iSeeOnto/aimodelevaluation#",
+    "<prov_IRI>": "http://www.w3.org/ns/prov#",
+    "<owl_IRI>": "http://www.w3.org/2002/07/owl#",
+    "<xml_IRI>": "http://www.w3.org/2001/XMLSchema#"
+}

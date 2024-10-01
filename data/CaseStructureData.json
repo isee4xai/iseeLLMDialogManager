@@ -1,0 +1,1376 @@
+[
+  {
+    "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemExplanationExperience",
+    "http://www.w3.org/2000/01/rdf-schema#comment": "Jiva_Radiograph_fracture_detection_system",
+    "classes": [
+      "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationExperience"
+    ],
+    "http://www.w3id.org/iSeeOnto/explanationexperience#hasDescription": {
+      "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemDescription",
+      "classes": [
+        "http://www.w3id.org/iSeeOnto/explanationexperience#Description"
+      ],
+      "http://www.w3id.org/iSeeOnto/explanationexperience#hasAIModel": {
+        "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIModel",
+        "classes": [
+          "http://www.w3id.org/iSeeOnto/aimodel#AIModel"
+        ],
+        "http://www.w3id.org/iSeeOnto/aimodel#solves": {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAITask",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/aimodel#Binary_Classification"
+          ],
+          "http://semanticscience.org/resource/SIO_000229": [
+            {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemSystemRecommendation",
+              "classes": [
+                "https://purl.org/heals/eo#SystemRecommendation"
+              ],
+              "http://www.w3.org/2000/01/rdf-schema#comment": ""
+            }
+          ],
+          "http://semanticscience.org/resource/SIO_000355": {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAITaskGoal",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodel#AITaskGoal"
+            ],
+            "http://semanticscience.org/resource/SIO_000300": "The AI system predicts if there is fracture or not in a given radiograph."
+          }
+        },
+        "http://www.w3id.org/iSeeOnto/explainer#utilises": {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethod",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/aimodel#Convolutional_Neural_Network"
+          ]
+        },
+        "http://www.w3id.org/iSeeOnto/aimodel#trainedOn": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemDataset",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodel#Dataset"
+            ],
+            "http://www.w3id.org/iSeeOnto/aimodel#featureCountRange": {
+              "instance": "http://www.w3id.org/iSeeOnto/aimodel#Greater_than_100",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Dataset_Feature_Quantity_Range"
+              ]
+            },
+            "http://www.w3id.org/iSeeOnto/aimodel#instanceCountRange": {
+              "value": "http://www.w3id.org/iSeeOnto/aimodel#Greater_than_1000",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Dataset_Instance_Quantity_Range"
+              ]
+            },
+            "http://www.w3id.org/iSeeOnto/aimodel#hasDatasetType": {
+              "instance": "http://www.w3id.org/iSeeOnto/explainer#image",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/explainer#DatasetType"
+              ]
+            },
+            "http://www.w3id.org/iSeeOnto/aimodel#hasFeatureType": [
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explainer#image",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/explainer#DataType"
+                ]
+              }
+            ]
+          }
+        ],
+        "http://www.w3id.org/iSeeOnto/evaluation#annotatedBy": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIModelAssessmentResult_0",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodelevaluation#AIModelAssessmentResult"
+            ],
+            "http://sensornet.abdn.ac.uk/onts/Qual-O#basedOn": "http://www.w3id.org/iSeeOnto/aimodelevaluation#F1-score_(macro)",
+            "http://www.w3.org/ns/prov#value": {
+              "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "value": "79.0%"
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIModelAssessmentResult_1",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodelevaluation#AIModelAssessmentResult"
+            ],
+            "http://sensornet.abdn.ac.uk/onts/Qual-O#basedOn": "http://www.w3id.org/iSeeOnto/aimodelevaluation#Accuracy",
+            "http://www.w3.org/ns/prov#value": {
+              "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "value": "77.8%"
+            }
+          }
+        ],
+        "http://www.w3id.org/iSeeOnto/aimodel#hasCaseStructureMetaData": {
+          "value": "[{\"name\":\"image_csv\",\"datatype\":\"image\",\"min\":\"-0.8936339\",\"min_raw\":\"0\",\"max\":\"4.1189427\",\"max_raw\":\"255\",\"target\":false,\"values\":[],\"shape\":\"320,320,1\",\"shape_raw\":\"320,320,1\"},{\"name\":\"label\",\"datatype\":\"categorical\",\"min\":\"\",\"max\":\"\",\"max_raw\":\"\",\"target\":true,\"values\":[{\"value\":\"0\",\"raw\":\"Negative\"},{\"value\":\"1\",\"raw\":\"Positive\"}]}]",
+          "language": "en"
+        }
+      },
+      "http://www.w3id.org/iSeeOnto/explanationexperience#hasExplanationRequirements": {
+        "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemExplanationRequirements",
+        "classes": [
+          "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationRequirements"
+        ],
+        "http://www.w3id.org/iSeeOnto/explanationexperience#hasExplanationCriteria": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemPortabilityCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasPortability",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "http://www.w3id.org/iSeeOnto/explainer#model-agnostic"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemConcurrentnessCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasConcurrentness",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "<ExplainerConcurrentness>"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemPresentationCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasPresentation",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredValueType": "<SIO_000015>"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemExplanationScopeCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasExplanationScope",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "http://www.w3id.org/iSeeOnto/explainer#local"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemEsxplanationTargetCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#targetType",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "http://www.w3id.org/iSeeOnto/explainer#prediction"
+          }
+        ]
+      },
+      "http://www.w3id.org/iSeeOnto/explanationexperience#hasUserGroup": {
+        "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/with_model/with_modelUserGroup_64218f15a3402ba28c44a5ba",
+        "http://www.w3.org/2000/01/rdf-schema#comment": "Clinician",
+        "classes": [
+          "http://www.w3id.org/iSeeOnto/user#UserGroup"
+        ],
+        "http://www.w3id.org/iSeeOnto/user#possessKnowledgeOf": {
+          "instance": "http://www.w3id.org/iSeeOnto/user#Healthcare",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/user#Domain"
+          ]
+        },
+        "http://www.w3id.org/iSeeOnto/user#hasIntent": {
+          "instance": "http://www.w3id.org/iSeeOnto/user#Transparency",
+          "classes": [
+            "http://semanticscience.org/resource/SIO_000358"
+          ]
+        },
+        "http://www.w3id.org/iSeeOnto/user#hasResources": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/user#Touchpad",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#VisualFacilities"
+            ]
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/user#ScreenDisplay",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#VisualFacilities"
+            ]
+          }
+        ],
+        "https://purl.org/heals/eo#possess": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethodKnowledge",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#AIMethodKnowledge"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#levelOfKnowledge": {
+              "instance": "http://www.w3id.org/iSeeOnto/user#no_knowledge",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/user#KnowledgeLevel"
+              ]
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserDomainKnowledge",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#DomainKnowledge"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#levelOfKnowledge": {
+              "instance": "http://www.w3id.org/iSeeOnto/user#expert",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/user#KnowledgeLevel"
+              ]
+            }
+          }
+        ],
+        "https://purl.org/heals/eo#asks": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserQuestion_iq-65491",
+            "http://semanticscience.org/resource/SIO_000300": "Which feature contributed to the current outcome?",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#UserQuestion"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#hasQuestionTarget": {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemSystemRecommendation",
+              "classes": [
+                "https://purl.org/heals/eo#SystemRecommendation"
+              ],
+              "http://www.w3.org/2000/01/rdf-schema#comment": ""
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserQuestion_iq-26631",
+            "http://semanticscience.org/resource/SIO_000300": "What features does the AI system consider?",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#UserQuestion"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#hasQuestionTarget": {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethod",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Convolutional_Neural_Network"
+              ]
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserQuestion_iq-689421",
+            "http://semanticscience.org/resource/SIO_000300": "What are the necessary features that guarantee this outcome?",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#UserQuestion"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#hasQuestionTarget": {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemSystemRecommendation",
+              "classes": [
+                "https://purl.org/heals/eo#SystemRecommendation"
+              ],
+              "http://www.w3.org/2000/01/rdf-schema#comment": ""
+            }
+          }
+        ]
+      }
+    },
+    "http://www.w3id.org/iSeeOnto/explanationexperience#hasSolution": {
+      "version": "0.1.0",
+      "scope": "project",
+      "selectedTree": "a6ec9fa5-a63d-4145-828f-fa9e52054c19",
+      "trees": [
+        {
+          "version": "0.1.0",
+          "scope": "tree",
+          "id": "a6ec9fa5-a63d-4145-828f-fa9e52054c19",
+          "Instance": "Jiva-MRI",
+          "description": "",
+          "root": "7646e480-e196-4f2d-89d4-75b7791f616e",
+          "nodes": {
+            "7646e480-e196-4f2d-89d4-75b7791f616e": {
+              "id": "7646e480-e196-4f2d-89d4-75b7791f616e",
+              "Concept": "Variant",
+              "Instance": "Variant",
+              "description": "Right sibling(s) generate explanations that clarify explanations generated by the left sibling(s)",
+              "display": {
+                "x": 0,
+                "y": 48
+              },
+              "firstChild": {
+                "Id": "1a539240-5981-41e2-98bb-39a687bdff8c",
+                "Next": {
+                  "Id": "49109ea8-53f2-477a-966f-9d6ec5e6fa45",
+                  "Next": null
+                }
+              }
+            },
+            "1a539240-5981-41e2-98bb-39a687bdff8c": {
+              "id": "1a539240-5981-41e2-98bb-39a687bdff8c",
+              "Concept": "Explanation Method",
+              "Instance": "/Images/IntegratedGradients",
+              "description": "",
+              "display": {
+                "x": -132,
+                "y": 216
+              },
+              "params": {
+                "target_class": "",
+                "method": "",
+                "n_steps": "",
+                "internal_batch_size": "",
+                "png_width": "",
+                "png_height": ""
+              }
+            },
+            "49109ea8-53f2-477a-966f-9d6ec5e6fa45": {
+              "id": "49109ea8-53f2-477a-966f-9d6ec5e6fa45",
+              "Concept": "Explanation Method",
+              "Instance": "/Images/NearestNeighbours",
+              "description": "",
+              "display": {
+                "x": 144,
+                "y": 216
+              },
+              "params": {
+                "no_neighbours": "3",
+                "png_width": "",
+                "png_height": ""
+              }
+            },
+            "ccdf7be2-820d-4e0d-8d36-999cfdafe365": {
+              "id": "ccdf7be2-820d-4e0d-8d36-999cfdafe365",
+              "Concept": "Sequence",
+              "Instance": "Sequence",
+              "description": "",
+              "display": {
+                "x": 0,
+                "y": -48
+              },
+              "firstChild": {
+                "Id": "7646e480-e196-4f2d-89d4-75b7791f616e",
+                "Next": null
+              }
+            }
+          },
+          "display": {
+            "camera_x": 720,
+            "camera_y": 394.5,
+            "camera_z": 1,
+            "x": 0,
+            "y": -48
+          }
+        }
+      ],
+      "custom_nodes": [
+        {
+          "version": "0.1.0",
+          "scope": "node",
+          "Concept": "Replacement",
+          "category": "composite",
+          "title": "Replacement",
+          "description": "The children nodes offer explanations that are completely different from each other"
+        },
+        {
+          "version": "0.1.0",
+          "scope": "node",
+          "Concept": "Variant",
+          "category": "composite",
+          "title": "Variant",
+          "description": "Right sibling(s) generate explanations that clarify explanations generated by the left sibling(s)"
+        },
+        {
+          "version": "0.1.0",
+          "scope": "node",
+          "Concept": "Complement",
+          "category": "composite",
+          "title": "Complement",
+          "description": "Right sibling(s) generate explanations that provides a different perspective to the explanations generated by the left sibling(s)"
+        },
+        {
+          "version": "0.1.0",
+          "scope": "node",
+          "Concept": "Supplement",
+          "category": "composite",
+          "title": "Supplement",
+          "description": "Right sibling(s) generate explanations that provide more information to the  explanations generated by the left sibling(s)"
+        }
+      ]
+    },
+    "http://www.w3id.org/iSeeOnto/explanationexperience#hasOutcome": {
+      "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOutcome",
+      "classes": [
+        "http://www.w3id.org/iSeeOnto/explanationexperience#Outcome"
+      ],
+      "http://linkedu.eu/dedalo/explanationPattern.owl#isBasedOn": [
+        {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemQuestion_q-1b756a49-5efc-4762-b9e5-dc2a74e3a618",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/userevaluation#Likert_Scale_Question"
+          ],
+          "http://www.w3.org/2000/01/rdf-schema#comment": "This explanation of how the fracture detection system works is satisfying.",
+          "http://www.w3id.org/iSeeOnto/userevaluation#sequenceIndex": 0,
+          "http://www.w3id.org/iSeeOnto/userevaluation#hasResponseOptions": {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemResponseOptionsSequence",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#ResponseOptionsSequence"
+            ],
+            "http://semanticscience.org/resource/SIO_000974": [
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-922941",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-922941"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-301761",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-301761"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-517441",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I’m neutral about it",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-517441"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-713891",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-713891"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-49201",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-49201"
+              }
+            ]
+          },
+          "http://sensornet.abdn.ac.uk/onts/Qual-O#measures": {
+            "instance": "Satisfaction",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#UserEvaluationDimension"
+            ]
+          }
+        },
+        {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemQuestion_q-79c7eff2-3744-47eb-96e5-3b676d5d0f64",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/userevaluation#Likert_Scale_Question"
+          ],
+          "http://www.w3.org/2000/01/rdf-schema#comment": "This explanation of how the fracture detection system works has sufficient detail.",
+          "http://www.w3id.org/iSeeOnto/userevaluation#sequenceIndex": 1,
+          "http://www.w3id.org/iSeeOnto/userevaluation#hasResponseOptions": {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemResponseOptionsSequence",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#ResponseOptionsSequence"
+            ],
+            "http://semanticscience.org/resource/SIO_000974": [
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-922941",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-922941"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-301761",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-301761"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-517441",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I’m neutral about it",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-517441"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-713891",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-713891"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-49201",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-49201"
+              }
+            ]
+          },
+          "http://sensornet.abdn.ac.uk/onts/Qual-O#measures": {
+            "instance": "Satisfaction",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#UserEvaluationDimension"
+            ]
+          }
+        },
+        {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemQuestion_q-ad88ddb2-3ab4-4889-bda5-c5eaf201fb02",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/userevaluation#Likert_Scale_Question"
+          ],
+          "http://www.w3.org/2000/01/rdf-schema#comment": "This explanation of how the fracture detection system works is useful to my goals.",
+          "http://www.w3id.org/iSeeOnto/userevaluation#sequenceIndex": 2,
+          "http://www.w3id.org/iSeeOnto/userevaluation#hasResponseOptions": {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemResponseOptionsSequence",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#ResponseOptionsSequence"
+            ],
+            "http://semanticscience.org/resource/SIO_000974": [
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-922941",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-922941"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-301761",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-301761"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-517441",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I’m neutral about it",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-517441"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-713891",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-713891"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-746281_res-428841_res-49201",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-49201"
+              }
+            ]
+          },
+          "http://sensornet.abdn.ac.uk/onts/Qual-O#measures": {
+            "instance": "Satisfaction",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#UserEvaluationDimension"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemExplanationExperience",
+    "http://www.w3.org/2000/01/rdf-schema#comment": "Jiva_Radiograph_fracture_detection_system",
+    "classes": [
+      "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationExperience"
+    ],
+    "http://www.w3id.org/iSeeOnto/explanationexperience#hasDescription": {
+      "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemDescription",
+      "classes": [
+        "http://www.w3id.org/iSeeOnto/explanationexperience#Description"
+      ],
+      "http://www.w3id.org/iSeeOnto/explanationexperience#hasAIModel": {
+        "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIModel",
+        "classes": [
+          "http://www.w3id.org/iSeeOnto/aimodel#AIModel"
+        ],
+        "http://www.w3id.org/iSeeOnto/aimodel#solves": {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAITask",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/aimodel#Binary_Classification"
+          ],
+          "http://semanticscience.org/resource/SIO_000229": [
+            {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemSystemRecommendation",
+              "classes": [
+                "https://purl.org/heals/eo#SystemRecommendation"
+              ],
+              "http://www.w3.org/2000/01/rdf-schema#comment": ""
+            }
+          ],
+          "http://semanticscience.org/resource/SIO_000355": {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAITaskGoal",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodel#AITaskGoal"
+            ],
+            "http://semanticscience.org/resource/SIO_000300": "The AI system predicts if there is fracture or not in a given radiograph."
+          }
+        },
+        "http://www.w3id.org/iSeeOnto/explainer#utilises": {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethod",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/aimodel#Convolutional_Neural_Network"
+          ]
+        },
+        "http://www.w3id.org/iSeeOnto/aimodel#trainedOn": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemDataset",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodel#Dataset"
+            ],
+            "http://www.w3id.org/iSeeOnto/aimodel#featureCountRange": {
+              "instance": "http://www.w3id.org/iSeeOnto/aimodel#Greater_than_100",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Dataset_Feature_Quantity_Range"
+              ]
+            },
+            "http://www.w3id.org/iSeeOnto/aimodel#instanceCountRange": {
+              "value": "http://www.w3id.org/iSeeOnto/aimodel#Greater_than_1000",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Dataset_Instance_Quantity_Range"
+              ]
+            },
+            "http://www.w3id.org/iSeeOnto/aimodel#hasDatasetType": {
+              "instance": "http://www.w3id.org/iSeeOnto/explainer#image",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/explainer#DatasetType"
+              ]
+            },
+            "http://www.w3id.org/iSeeOnto/aimodel#hasFeatureType": [
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explainer#image",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/explainer#DataType"
+                ]
+              }
+            ]
+          }
+        ],
+        "http://www.w3id.org/iSeeOnto/evaluation#annotatedBy": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIModelAssessmentResult_0",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodelevaluation#AIModelAssessmentResult"
+            ],
+            "http://sensornet.abdn.ac.uk/onts/Qual-O#basedOn": "http://www.w3id.org/iSeeOnto/aimodelevaluation#F1-score_(macro)",
+            "http://www.w3.org/ns/prov#value": {
+              "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "value": "79.0%"
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIModelAssessmentResult_1",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodelevaluation#AIModelAssessmentResult"
+            ],
+            "http://sensornet.abdn.ac.uk/onts/Qual-O#basedOn": "http://www.w3id.org/iSeeOnto/aimodelevaluation#Accuracy",
+            "http://www.w3.org/ns/prov#value": {
+              "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "value": "77.8%"
+            }
+          }
+        ],
+        "http://www.w3id.org/iSeeOnto/aimodel#hasCaseStructureMetaData": {
+          "value": "[{\"name\":\"image_csv\",\"datatype\":\"image\",\"min\":\"-0.8936339\",\"min_raw\":\"0\",\"max\":\"4.1189427\",\"max_raw\":\"255\",\"target\":false,\"values\":[],\"shape\":\"320,320,1\",\"shape_raw\":\"320,320,1\"},{\"name\":\"label\",\"datatype\":\"categorical\",\"min\":\"\",\"max\":\"\",\"max_raw\":\"\",\"target\":true,\"values\":[{\"value\":\"0\",\"raw\":\"Negative\"},{\"value\":\"1\",\"raw\":\"Positive\"}]}]",
+          "language": "en"
+        }
+      },
+      "http://www.w3id.org/iSeeOnto/explanationexperience#hasExplanationRequirements": {
+        "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemExplanationRequirements",
+        "classes": [
+          "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationRequirements"
+        ],
+        "http://www.w3id.org/iSeeOnto/explanationexperience#hasExplanationCriteria": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemPortabilityCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasPortability",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "http://www.w3id.org/iSeeOnto/explainer#model-agnostic"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemConcurrentnessCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasConcurrentness",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "<ExplainerConcurrentness>"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemPresentationCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasPresentation",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredValueType": "<SIO_000015>"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemExplanationScopeCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasExplanationScope",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "http://www.w3id.org/iSeeOnto/explainer#local"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemEsxplanationTargetCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#targetType",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "http://www.w3id.org/iSeeOnto/explainer#prediction"
+          }
+        ]
+      },
+      "http://www.w3id.org/iSeeOnto/explanationexperience#hasUserGroup": {
+        "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/with_model/with_modelUserGroup_64218f15a3402ba28c44a5ba",
+        "http://www.w3.org/2000/01/rdf-schema#comment": "Clinician",
+        "classes": [
+          "http://www.w3id.org/iSeeOnto/user#UserGroup"
+        ],
+        "http://www.w3id.org/iSeeOnto/user#possessKnowledgeOf": {
+          "instance": "http://www.w3id.org/iSeeOnto/user#Healthcare",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/user#Domain"
+          ]
+        },
+        "http://www.w3id.org/iSeeOnto/user#hasIntent": {
+          "instance": "http://www.w3id.org/iSeeOnto/user#Performance",
+          "classes": [
+            "http://semanticscience.org/resource/SIO_000358"
+          ]
+        },
+        "http://www.w3id.org/iSeeOnto/user#hasResources": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/user#Touchpad",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#VisualFacilities"
+            ]
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/user#ScreenDisplay",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#VisualFacilities"
+            ]
+          }
+        ],
+        "https://purl.org/heals/eo#possess": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethodKnowledge",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#AIMethodKnowledge"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#levelOfKnowledge": {
+              "instance": "http://www.w3id.org/iSeeOnto/user#no_knowledge",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/user#KnowledgeLevel"
+              ]
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserDomainKnowledge",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#DomainKnowledge"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#levelOfKnowledge": {
+              "instance": "http://www.w3id.org/iSeeOnto/user#expert",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/user#KnowledgeLevel"
+              ]
+            }
+          }
+        ],
+        "https://purl.org/heals/eo#asks": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserQuestion_iq-311521",
+            "http://semanticscience.org/resource/SIO_000300": "How accurate is the AI system?",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#UserQuestion"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#hasQuestionTarget": {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethod",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Convolutional_Neural_Network"
+              ]
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserQuestion_iq-732051",
+            "http://semanticscience.org/resource/SIO_000300": "How reliable is the AI system?",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#UserQuestion"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#hasQuestionTarget": {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethod",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Convolutional_Neural_Network"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "http://www.w3id.org/iSeeOnto/explanationexperience#hasSolution": {
+      "version": "0.1.0",
+      "scope": "project",
+      "selectedTree": "23bb1a7b-a4b3-449e-8c82-4e6f3e0cb327",
+      "trees": [
+        {
+          "version": "0.1.0",
+          "scope": "tree",
+          "id": "23bb1a7b-a4b3-449e-8c82-4e6f3e0cb327",
+          "Instance": "Explanation Experience",
+          "description": "",
+          "root": "ff978c28-7448-49af-acb0-bed28400292f",
+          "nodes": {
+            "ff978c28-7448-49af-acb0-bed28400292f": {
+              "id": "ff978c28-7448-49af-acb0-bed28400292f",
+              "Concept": "Sequence",
+              "Instance": "Sequence",
+              "description": "",
+              "display": {
+                "x": 0,
+                "y": 96
+              },
+              "firstChild": {
+                "Id": "66dd0924-7b59-41c2-b690-a2f613840c68",
+                "Next": null
+              }
+            },
+            "66dd0924-7b59-41c2-b690-a2f613840c68": {
+              "id": "66dd0924-7b59-41c2-b690-a2f613840c68",
+              "Concept": "Explanation Method",
+              "Instance": "/Misc/AIModelPerformance",
+              "description": "",
+              "display": {
+                "x": 0,
+                "y": 216
+              },
+              "params": {
+                "selected_metrics": ""
+              }
+            }
+          },
+          "display": {
+            "camera_x": 720,
+            "camera_y": 394.5,
+            "camera_z": 1,
+            "x": 0,
+            "y": 0
+          }
+        }
+      ],
+      "custom_nodes": []
+    },
+    "http://www.w3id.org/iSeeOnto/explanationexperience#hasOutcome": {
+      "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOutcome",
+      "classes": [
+        "http://www.w3id.org/iSeeOnto/explanationexperience#Outcome"
+      ],
+      "http://linkedu.eu/dedalo/explanationPattern.owl#isBasedOn": [
+        {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemQuestion_q-60014733-259e-4865-8b22-6b0e07e00e11",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/userevaluation#Likert_Scale_Question"
+          ],
+          "http://www.w3.org/2000/01/rdf-schema#comment": "I am confident in the fracture detection system. I feel that it works well.",
+          "http://www.w3id.org/iSeeOnto/userevaluation#sequenceIndex": 0,
+          "http://www.w3id.org/iSeeOnto/userevaluation#hasResponseOptions": {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemResponseOptionsSequence",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#ResponseOptionsSequence"
+            ],
+            "http://semanticscience.org/resource/SIO_000974": [
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-515961",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-515961"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-981791",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-981791"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-175061",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I’m neutral about it",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-175061"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-607771",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-607771"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-996321",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-996321"
+              }
+            ]
+          },
+          "http://sensornet.abdn.ac.uk/onts/Qual-O#measures": {
+            "instance": "Trust",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#UserEvaluationDimension"
+            ]
+          }
+        },
+        {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemQuestion_q-c4d33c3a-99e8-4b92-bf25-d89cd235f6aa",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/userevaluation#Likert_Scale_Question"
+          ],
+          "http://www.w3.org/2000/01/rdf-schema#comment": "I am wary of the fracture detection system.",
+          "http://www.w3id.org/iSeeOnto/userevaluation#sequenceIndex": 1,
+          "http://www.w3id.org/iSeeOnto/userevaluation#hasResponseOptions": {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemResponseOptionsSequence",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#ResponseOptionsSequence"
+            ],
+            "http://semanticscience.org/resource/SIO_000974": [
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-515961",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-515961"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-981791",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-981791"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-175061",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I’m neutral about it",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-175061"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-607771",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-607771"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-432261_res-996321",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-996321"
+              }
+            ]
+          },
+          "http://sensornet.abdn.ac.uk/onts/Qual-O#measures": {
+            "instance": "Trust",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#UserEvaluationDimension"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemExplanationExperience",
+    "http://www.w3.org/2000/01/rdf-schema#comment": "Jiva_Radiograph_fracture_detection_system",
+    "classes": [
+      "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationExperience"
+    ],
+    "http://www.w3id.org/iSeeOnto/explanationexperience#hasDescription": {
+      "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemDescription",
+      "classes": [
+        "http://www.w3id.org/iSeeOnto/explanationexperience#Description"
+      ],
+      "http://www.w3id.org/iSeeOnto/explanationexperience#hasAIModel": {
+        "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIModel",
+        "classes": [
+          "http://www.w3id.org/iSeeOnto/aimodel#AIModel"
+        ],
+        "http://www.w3id.org/iSeeOnto/aimodel#solves": {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAITask",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/aimodel#Binary_Classification"
+          ],
+          "http://semanticscience.org/resource/SIO_000229": [
+            {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemSystemRecommendation",
+              "classes": [
+                "https://purl.org/heals/eo#SystemRecommendation"
+              ],
+              "http://www.w3.org/2000/01/rdf-schema#comment": ""
+            }
+          ],
+          "http://semanticscience.org/resource/SIO_000355": {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAITaskGoal",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodel#AITaskGoal"
+            ],
+            "http://semanticscience.org/resource/SIO_000300": "The AI system predicts if there is fracture or not in a given radiograph."
+          }
+        },
+        "http://www.w3id.org/iSeeOnto/explainer#utilises": {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethod",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/aimodel#Convolutional_Neural_Network"
+          ]
+        },
+        "http://www.w3id.org/iSeeOnto/aimodel#trainedOn": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemDataset",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodel#Dataset"
+            ],
+            "http://www.w3id.org/iSeeOnto/aimodel#featureCountRange": {
+              "instance": "http://www.w3id.org/iSeeOnto/aimodel#Greater_than_100",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Dataset_Feature_Quantity_Range"
+              ]
+            },
+            "http://www.w3id.org/iSeeOnto/aimodel#instanceCountRange": {
+              "value": "http://www.w3id.org/iSeeOnto/aimodel#Greater_than_1000",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Dataset_Instance_Quantity_Range"
+              ]
+            },
+            "http://www.w3id.org/iSeeOnto/aimodel#hasDatasetType": {
+              "instance": "http://www.w3id.org/iSeeOnto/explainer#image",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/explainer#DatasetType"
+              ]
+            },
+            "http://www.w3id.org/iSeeOnto/aimodel#hasFeatureType": [
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explainer#image",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/explainer#DataType"
+                ]
+              }
+            ]
+          }
+        ],
+        "http://www.w3id.org/iSeeOnto/evaluation#annotatedBy": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIModelAssessmentResult_0",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodelevaluation#AIModelAssessmentResult"
+            ],
+            "http://sensornet.abdn.ac.uk/onts/Qual-O#basedOn": "http://www.w3id.org/iSeeOnto/aimodelevaluation#F1-score_(macro)",
+            "http://www.w3.org/ns/prov#value": {
+              "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "value": "79.0%"
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIModelAssessmentResult_1",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/aimodelevaluation#AIModelAssessmentResult"
+            ],
+            "http://sensornet.abdn.ac.uk/onts/Qual-O#basedOn": "http://www.w3id.org/iSeeOnto/aimodelevaluation#Accuracy",
+            "http://www.w3.org/ns/prov#value": {
+              "type": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "value": "77.8%"
+            }
+          }
+        ],
+        "http://www.w3id.org/iSeeOnto/aimodel#hasCaseStructureMetaData": {
+          "value": "[{\"name\":\"image_csv\",\"datatype\":\"image\",\"min\":\"-0.8936339\",\"min_raw\":\"0\",\"max\":\"4.1189427\",\"max_raw\":\"255\",\"target\":false,\"values\":[],\"shape\":\"320,320,1\",\"shape_raw\":\"320,320,1\"},{\"name\":\"label\",\"datatype\":\"categorical\",\"min\":\"\",\"max\":\"\",\"max_raw\":\"\",\"target\":true,\"values\":[{\"value\":\"0\",\"raw\":\"Negative\"},{\"value\":\"1\",\"raw\":\"Positive\"}]}]",
+          "language": "en"
+        }
+      },
+      "http://www.w3id.org/iSeeOnto/explanationexperience#hasExplanationRequirements": {
+        "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemExplanationRequirements",
+        "classes": [
+          "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationRequirements"
+        ],
+        "http://www.w3id.org/iSeeOnto/explanationexperience#hasExplanationCriteria": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemPortabilityCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasPortability",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "http://www.w3id.org/iSeeOnto/explainer#model-agnostic"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemConcurrentnessCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasConcurrentness",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "<ExplainerConcurrentness>"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemPresentationCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasPresentation",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredValueType": "<SIO_000015>"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemExplanationScopeCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#hasExplanationScope",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "http://www.w3id.org/iSeeOnto/explainer#local"
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemEsxplanationTargetCriteria",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/explanationexperience#ExplanationCriteria"
+            ],
+            "http://www.w3id.org/iSeeOnto/explanationexperience#onProperty": "http://www.w3id.org/iSeeOnto/explainer#targetType",
+            "http://www.w3id.org/iSeeOnto/explanationexperience#requiredObjectValue": "http://www.w3id.org/iSeeOnto/explainer#prediction"
+          }
+        ]
+      },
+      "http://www.w3id.org/iSeeOnto/explanationexperience#hasUserGroup": {
+        "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/with_model/with_modelUserGroup_64218f1da3402ba28c44a5c0",
+        "http://www.w3.org/2000/01/rdf-schema#comment": "Manager",
+        "classes": [
+          "http://www.w3id.org/iSeeOnto/user#UserGroup"
+        ],
+        "http://www.w3id.org/iSeeOnto/user#possessKnowledgeOf": {
+          "instance": "http://www.w3id.org/iSeeOnto/user#Healthcare",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/user#Domain"
+          ]
+        },
+        "http://www.w3id.org/iSeeOnto/user#hasIntent": {
+          "instance": "http://www.w3id.org/iSeeOnto/user#Performance",
+          "classes": [
+            "http://semanticscience.org/resource/SIO_000358"
+          ]
+        },
+        "http://www.w3id.org/iSeeOnto/user#hasResources": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/user#Touchpad",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#VisualFacilities"
+            ]
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/user#ScreenDisplay",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#VisualFacilities"
+            ]
+          }
+        ],
+        "https://purl.org/heals/eo#possess": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethodKnowledge",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#AIMethodKnowledge"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#levelOfKnowledge": {
+              "instance": "http://www.w3id.org/iSeeOnto/user#advanced_beginner",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/user#KnowledgeLevel"
+              ]
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserDomainKnowledge",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#DomainKnowledge"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#levelOfKnowledge": {
+              "instance": "http://www.w3id.org/iSeeOnto/user#novice",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/user#KnowledgeLevel"
+              ]
+            }
+          }
+        ],
+        "https://purl.org/heals/eo#asks": [
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserQuestion_iq-189911",
+            "http://semanticscience.org/resource/SIO_000300": "How accurate is the AI system?",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#UserQuestion"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#hasQuestionTarget": {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethod",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Convolutional_Neural_Network"
+              ]
+            }
+          },
+          {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemUserQuestion_iq-264841",
+            "http://semanticscience.org/resource/SIO_000300": "How reliable is the AI system?",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/user#UserQuestion"
+            ],
+            "http://www.w3id.org/iSeeOnto/user#hasQuestionTarget": {
+              "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemAIMethod",
+              "classes": [
+                "http://www.w3id.org/iSeeOnto/aimodel#Convolutional_Neural_Network"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "http://www.w3id.org/iSeeOnto/explanationexperience#hasSolution": {
+      "version": "0.1.0",
+      "scope": "project",
+      "selectedTree": "23bb1a7b-a4b3-449e-8c82-4e6f3e0cb327",
+      "trees": [
+        {
+          "version": "0.1.0",
+          "scope": "tree",
+          "id": "23bb1a7b-a4b3-449e-8c82-4e6f3e0cb327",
+          "Instance": "Explanation Experience",
+          "description": "",
+          "root": "ff978c28-7448-49af-acb0-bed28400292f",
+          "nodes": {
+            "ff978c28-7448-49af-acb0-bed28400292f": {
+              "id": "ff978c28-7448-49af-acb0-bed28400292f",
+              "Concept": "Sequence",
+              "Instance": "Sequence",
+              "description": "",
+              "display": {
+                "x": 0,
+                "y": 96
+              },
+              "firstChild": {
+                "Id": "66dd0924-7b59-41c2-b690-a2f613840c68",
+                "Next": null
+              }
+            },
+            "66dd0924-7b59-41c2-b690-a2f613840c68": {
+              "id": "66dd0924-7b59-41c2-b690-a2f613840c68",
+              "Concept": "Explanation Method",
+              "Instance": "/Images/IntegratedGradients",
+              "description": "",
+              "display": {
+                "x": 0,
+                "y": 216
+              },
+              "params": {
+                "target_layer": "",
+                "target_layer_index": "",
+                "target_class": "",
+                "mean": "",
+                "std": "",
+                "aug_smooth": ""
+              }
+            }
+          },
+          "display": {
+            "camera_x": 720,
+            "camera_y": 394.5,
+            "camera_z": 1,
+            "x": 0,
+            "y": 0
+          }
+        }
+      ],
+      "custom_nodes": []
+    },
+    "http://www.w3id.org/iSeeOnto/explanationexperience#hasOutcome": {
+      "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOutcome",
+      "classes": [
+        "http://www.w3id.org/iSeeOnto/explanationexperience#Outcome"
+      ],
+      "http://linkedu.eu/dedalo/explanationPattern.owl#isBasedOn": [
+        {
+          "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemQuestion_q-b680bf58-c5d7-44b7-9845-1dec05f91d33",
+          "classes": [
+            "http://www.w3id.org/iSeeOnto/userevaluation#Likert_Scale_Question"
+          ],
+          "http://www.w3.org/2000/01/rdf-schema#comment": "I am confident in the fracture detection system. I feel that it works well.",
+          "http://www.w3id.org/iSeeOnto/userevaluation#sequenceIndex": 0,
+          "http://www.w3id.org/iSeeOnto/userevaluation#hasResponseOptions": {
+            "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemResponseOptionsSequence",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#ResponseOptionsSequence"
+            ],
+            "http://semanticscience.org/resource/SIO_000974": [
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-443331",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-443331"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-868251",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I agree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-868251"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-735481",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I’m neutral about it",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-735481"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-772941",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree somewhat",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-772941"
+              },
+              {
+                "instance": "http://www.w3id.org/iSeeOnto/explanationexperience/Jiva_Radiograph_fracture_detection_system/Jiva_Radiograph_fracture_detection_systemOrderedResponseOptionValuePair_res-100331",
+                "classes": [
+                  "http://www.w3id.org/iSeeOnto/userevaluation#OrderedResponseOptionValuePair"
+                ],
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pair_value_literal": "I disagree strongly",
+                "https://www.w3id.org/iSeeOnto/BehaviourTree#pairKey": "res-100331"
+              }
+            ]
+          },
+          "http://sensornet.abdn.ac.uk/onts/Qual-O#measures": {
+            "instance": "Trust",
+            "classes": [
+              "http://www.w3id.org/iSeeOnto/userevaluation#UserEvaluationDimension"
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

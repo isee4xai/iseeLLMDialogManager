@@ -1,0 +1,20 @@
+{
+  "instance": "<bt_exec_IRI><node_id>Node",
+  "class": "<bt_IRI><node_concept>",
+  "<prov_IRI>specializationOf": {
+    "instance": "<bt_IRI><node_id>Node",
+    "class": "<bt_IRI><node_concept>"
+  },
+  "<bt_IRI>properties": { 
+    "instance": "<bt_exec_IRI><node_id>NodePropertyDict",
+    "class": "<bt_IRI>Dictionary",
+    "<bt_IRI>hasDictionaryMember": [
+      {
+        "instance": "<bt_exec_IRI><node_id>NodeProperty",
+        "class": "<bt_IRI>KeyObjectValuePair",
+        "<bt_IRI>pairKey": "<property_key>",
+        "<bt_IRI>pair_value_object": "<property_value>"
+      }
+    ]
+  }
+}

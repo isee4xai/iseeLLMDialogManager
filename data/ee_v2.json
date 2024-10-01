@@ -1,0 +1,623 @@
+{
+  "version": "0.1.0",
+  "scope": "tree",
+  "id": "26c9c380-bb4d-4c3b-8f3a-4aa00517273b",
+  "Instance": "EE_v2",
+  "description": "",
+  "root": "2e0a60a6-2bdc-42b9-8a77-bbaf07689ffc",
+  "properties": {},
+  "custom_nodes": [
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "World Modifier",
+      "category": "action",
+      "title": "World Modifier",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Question",
+      "category": "action",
+      "title": "Question",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Equal",
+      "category": "condition",
+      "title": "Equal",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Need Question",
+      "category": "action",
+      "title": "Need Question",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Initialiser",
+      "category": "action",
+      "title": "Initialiser",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Greeter",
+      "category": "action",
+      "title": "Greeter",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Usecase Modifier",
+      "category": "action",
+      "title": "Usecase Modifier",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Knowledge Question",
+      "category": "action",
+      "title": "Knowledge Question",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Strategy",
+      "category": "composite",
+      "title": "Strategy",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Persona Question",
+      "category": "action",
+      "title": "Persona Question",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Navigator",
+      "category": "action",
+      "title": "Navigator",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Explanation Strategy",
+      "category": "composite",
+      "title": "Explanation Strategy",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Evaluation Strategy",
+      "category": "composite",
+      "title": "Evaluation Strategy",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "0.1.0",
+      "scope": "node",
+      "Concept": "Confirm Question",
+      "category": "action",
+      "title": "Confirm Question",
+      "description": null,
+      "properties": {}
+    }
+  ],
+  "nodes": {
+    "2e0a60a6-2bdc-42b9-8a77-bbaf07689ffc": {
+      "id": "2e0a60a6-2bdc-42b9-8a77-bbaf07689ffc",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -12,
+        "y": -72
+      },
+      "firstChild": {
+        "Id": "2f86b331-9132-42f6-8a45-3dcd82c92e8c",
+        "Next": {
+          "Id": "fa6833ef-9193-4e08-8c54-a8f41bded465",
+          "Next": {
+            "Id": "6a99c7e8-df44-4a53-8006-bbd831f11b67",
+            "Next": {
+              "Id": "1633b6e6-c578-4347-9649-6c6de19d6bf8",
+              "Next": {
+                "Id": "d1d86bff-86f7-4229-82eb-a42f397099f5",
+                "Next": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "2f86b331-9132-42f6-8a45-3dcd82c92e8c": {
+      "id": "2f86b331-9132-42f6-8a45-3dcd82c92e8c",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -648,
+        "y": 288
+      },
+      "firstChild": {
+        "Id": "96f071a6-9006-4756-95db-4502af7d5793",
+        "Next": {
+          "Id": "bc721edc-dc5b-4afe-ae7e-36193e2657c5",
+          "Next": null
+        }
+      }
+    },
+    "96f071a6-9006-4756-95db-4502af7d5793": {
+      "id": "96f071a6-9006-4756-95db-4502af7d5793",
+      "Concept": "Initialiser",
+      "Instance": "Initialise",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -744,
+        "y": 432
+      }
+    },
+    "bc721edc-dc5b-4afe-ae7e-36193e2657c5": {
+      "id": "bc721edc-dc5b-4afe-ae7e-36193e2657c5",
+      "Concept": "World Modifier",
+      "Instance": "Set initialise complete",
+      "description": "",
+      "properties": {
+        "initialise": "True"
+      },
+      "display": {
+        "x": -564,
+        "y": 432
+      }
+    },
+    "fa6833ef-9193-4e08-8c54-a8f41bded465": {
+      "id": "fa6833ef-9193-4e08-8c54-a8f41bded465",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -180,
+        "y": 288
+      },
+      "firstChild": {
+        "Id": "cc942c1d-a692-4848-8db9-daac4c7d16fc",
+        "Next": {
+          "Id": "367cbcc6-2996-4b9a-882a-05904b42da5b",
+          "Next": {
+            "Id": "0c7482fc-7cc0-4ba5-96a1-6f9736335798",
+            "Next": null
+          }
+        }
+      }
+    },
+    "cc942c1d-a692-4848-8db9-daac4c7d16fc": {
+      "id": "cc942c1d-a692-4848-8db9-daac4c7d16fc",
+      "Concept": "Equal",
+      "Instance": "if initialised",
+      "description": "",
+      "properties": {
+        "initialise": "True",
+        "proceed": "False"
+      },
+      "display": {
+        "x": -348,
+        "y": 432
+      }
+    },
+    "367cbcc6-2996-4b9a-882a-05904b42da5b": {
+      "id": "367cbcc6-2996-4b9a-882a-05904b42da5b",
+      "Concept": "Greeter",
+      "Instance": "Greet",
+      "description": "",
+      "properties": {
+        "variable": "proceed_response"
+      },
+      "display": {
+        "x": -180,
+        "y": 432
+      }
+    },
+    "0c7482fc-7cc0-4ba5-96a1-6f9736335798": {
+      "id": "0c7482fc-7cc0-4ba5-96a1-6f9736335798",
+      "Concept": "World Modifier",
+      "Instance": "Set proceed complete",
+      "description": "",
+      "properties": {
+        "proceed": "True"
+      },
+      "display": {
+        "x": 12,
+        "y": 432
+      }
+    },
+    "cff3a1c3-5c7e-462f-afcc-4318753cc2fb": {
+      "id": "cff3a1c3-5c7e-462f-afcc-4318753cc2fb",
+      "Concept": "RepeatUntilSuccess",
+      "Instance": "Repeat Until Success",
+      "description": "",
+      "properties": {
+        "maxLoop": -1
+      },
+      "display": {
+        "x": 276,
+        "y": 624
+      },
+      "firstChild": {
+        "Id": "77118415-49ac-4945-85b6-3fc28a657275",
+        "Next": null
+      }
+    },
+    "c256c753-4a14-4bcb-8154-302c88ef037d": {
+      "id": "c256c753-4a14-4bcb-8154-302c88ef037d",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 660,
+        "y": 420
+      },
+      "firstChild": {
+        "Id": "cff3a1c3-5c7e-462f-afcc-4318753cc2fb",
+        "Next": {
+          "Id": "51db427b-92ca-40f5-bb8b-7396778ac985",
+          "Next": {
+            "Id": "73a09eca-be32-43ce-85ff-f5611e4ce129",
+            "Next": null
+          }
+        }
+      }
+    },
+    "29610e62-e6d1-4115-921a-2aea68824479": {
+      "id": "29610e62-e6d1-4115-921a-2aea68824479",
+      "Concept": "Equal",
+      "Instance": "if persona incomplete",
+      "description": "",
+      "properties": {
+        "proceed": "True",
+        "persona": "False"
+      },
+      "display": {
+        "x": 84,
+        "y": 828
+      }
+    },
+    "b2b0a8e8-8f30-4d05-9148-6a40583630a3": {
+      "id": "b2b0a8e8-8f30-4d05-9148-6a40583630a3",
+      "Concept": "Persona Question",
+      "Instance": "Persona",
+      "description": "",
+      "properties": {
+        "variable": "selected_persona",
+        "question": "I would like to know a more about your knowledge of the system, can you select a user group from below that best describes you?"
+      },
+      "display": {
+        "x": 276,
+        "y": 828
+      }
+    },
+    "77118415-49ac-4945-85b6-3fc28a657275": {
+      "id": "77118415-49ac-4945-85b6-3fc28a657275",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 276,
+        "y": 720
+      },
+      "firstChild": {
+        "Id": "29610e62-e6d1-4115-921a-2aea68824479",
+        "Next": {
+          "Id": "b2b0a8e8-8f30-4d05-9148-6a40583630a3",
+          "Next": {
+            "Id": "282c5cea-967e-42c9-a7f7-b0a2a613b398",
+            "Next": null
+          }
+        }
+      }
+    },
+    "282c5cea-967e-42c9-a7f7-b0a2a613b398": {
+      "id": "282c5cea-967e-42c9-a7f7-b0a2a613b398",
+      "Concept": "World Modifier",
+      "Instance": "Set persona complete",
+      "description": "",
+      "properties": {
+        "persona": "True"
+      },
+      "display": {
+        "x": 480,
+        "y": 828
+      }
+    },
+    "51db427b-92ca-40f5-bb8b-7396778ac985": {
+      "id": "51db427b-92ca-40f5-bb8b-7396778ac985",
+      "Concept": "RepeatUntilSuccess",
+      "Instance": "Repeat Until Success",
+      "description": "",
+      "properties": {
+        "maxLoop": -1
+      },
+      "display": {
+        "x": 852,
+        "y": 612
+      },
+      "firstChild": {
+        "Id": "ff6a6fd5-bc5b-42d7-87a1-d2db38fcd68d",
+        "Next": null
+      }
+    },
+    "ff6a6fd5-bc5b-42d7-87a1-d2db38fcd68d": {
+      "id": "ff6a6fd5-bc5b-42d7-87a1-d2db38fcd68d",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 852,
+        "y": 720
+      },
+      "firstChild": {
+        "Id": "fb91f20a-d142-42a0-92c7-25bf65822ec0",
+        "Next": {
+          "Id": "cb985c59-1145-4ec1-83f9-d1eb92a19a65",
+          "Next": {
+            "Id": "6825f4fa-e397-45ef-a263-b6488802100f",
+            "Next": null
+          }
+        }
+      }
+    },
+    "fb91f20a-d142-42a0-92c7-25bf65822ec0": {
+      "id": "fb91f20a-d142-42a0-92c7-25bf65822ec0",
+      "Concept": "Equal",
+      "Instance": "if need incomplete",
+      "description": "",
+      "properties": {
+        "need": "False",
+        "persona": "True"
+      },
+      "display": {
+        "x": 672,
+        "y": 828
+      }
+    },
+    "cb985c59-1145-4ec1-83f9-d1eb92a19a65": {
+      "id": "cb985c59-1145-4ec1-83f9-d1eb92a19a65",
+      "Concept": "Need Question",
+      "Instance": "Need",
+      "description": "",
+      "properties": {
+        "variable": "selected_need",
+        "question": "I want to understand what kind of explanation you want.  Select a question below if it is similar to what you would like to know, or tell me what you would like to know."
+      },
+      "display": {
+        "x": 852,
+        "y": 828
+      }
+    },
+    "6825f4fa-e397-45ef-a263-b6488802100f": {
+      "id": "6825f4fa-e397-45ef-a263-b6488802100f",
+      "Concept": "World Modifier",
+      "Instance": "Set need complete",
+      "description": "",
+      "properties": {
+        "need": "True"
+      },
+      "display": {
+        "x": 1032,
+        "y": 828
+      }
+    },
+    "18704e1a-d968-471b-ba78-9b1ac46fcb2b": {
+      "id": "18704e1a-d968-471b-ba78-9b1ac46fcb2b",
+      "Concept": "Equal",
+      "Instance": "if evaluation incomplete",
+      "description": "",
+      "properties": {
+        "evaluation": "False"
+      },
+      "display": {
+        "x": 1296,
+        "y": 420
+      }
+    },
+    "1633b6e6-c578-4347-9649-6c6de19d6bf8": {
+      "id": "1633b6e6-c578-4347-9649-6c6de19d6bf8",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 1488,
+        "y": 288
+      },
+      "firstChild": {
+        "Id": "18704e1a-d968-471b-ba78-9b1ac46fcb2b",
+        "Next": {
+          "Id": "1582ff0f-11de-47d4-a639-d6b34c6ec2cd",
+          "Next": {
+            "Id": "b248351d-fd85-42a4-88d4-b1421e7ee72f",
+            "Next": {
+              "Id": "25aa331e-dcf7-4764-8885-cf0079628f0d",
+              "Next": null
+            }
+          }
+        }
+      }
+    },
+    "6a99c7e8-df44-4a53-8006-bbd831f11b67": {
+      "id": "6a99c7e8-df44-4a53-8006-bbd831f11b67",
+      "Concept": "RepeatUntilSuccess",
+      "Instance": "Repeat Until Success",
+      "description": "",
+      "properties": {
+        "maxLoop": -1
+      },
+      "display": {
+        "x": 660,
+        "y": 312
+      },
+      "firstChild": {
+        "Id": "c256c753-4a14-4bcb-8154-302c88ef037d",
+        "Next": null
+      }
+    },
+    "25aa331e-dcf7-4764-8885-cf0079628f0d": {
+      "id": "25aa331e-dcf7-4764-8885-cf0079628f0d",
+      "Concept": "World Modifier",
+      "Instance": "Set evaluation complete",
+      "description": "",
+      "properties": {
+        "evaluation": "True"
+      },
+      "display": {
+        "x": 1884,
+        "y": 420
+      }
+    },
+    "b248351d-fd85-42a4-88d4-b1421e7ee72f": {
+      "id": "b248351d-fd85-42a4-88d4-b1421e7ee72f",
+      "Concept": "Evaluation Strategy",
+      "Instance": "Evaluation Strategy",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 1680,
+        "y": 420
+      }
+    },
+    "d1d86bff-86f7-4229-82eb-a42f397099f5": {
+      "id": "d1d86bff-86f7-4229-82eb-a42f397099f5",
+      "Concept": "Sequence",
+      "Instance": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 2340,
+        "y": 324
+      },
+      "firstChild": {
+        "Id": "ab66c567-9732-41c4-893c-6eaf16e680a7",
+        "Next": {
+          "Id": "fab22d47-135a-44c1-a0b7-d191f391e26d",
+          "Next": {
+            "Id": "b2e737d5-fbff-4fa4-8360-5cee49d67986",
+            "Next": null
+          }
+        }
+      }
+    },
+    "ab66c567-9732-41c4-893c-6eaf16e680a7": {
+      "id": "ab66c567-9732-41c4-893c-6eaf16e680a7",
+      "Concept": "Equal",
+      "Instance": "is complete",
+      "description": "",
+      "properties": {
+        "complete": "False"
+      },
+      "display": {
+        "x": 2172,
+        "y": 432
+      }
+    },
+    "fab22d47-135a-44c1-a0b7-d191f391e26d": {
+      "id": "fab22d47-135a-44c1-a0b7-d191f391e26d",
+      "Concept": "Greeter",
+      "Instance": "Complete",
+      "description": "",
+      "properties": {
+        "variable": "complete_response"
+      },
+      "display": {
+        "x": 2340,
+        "y": 432
+      }
+    },
+    "b2e737d5-fbff-4fa4-8360-5cee49d67986": {
+      "id": "b2e737d5-fbff-4fa4-8360-5cee49d67986",
+      "Concept": "World Modifier",
+      "Instance": "Set complete",
+      "description": "",
+      "properties": {
+        "complete": "True"
+      },
+      "display": {
+        "x": 2508,
+        "y": 432
+      }
+    },
+    "73a09eca-be32-43ce-85ff-f5611e4ce129": {
+      "id": "73a09eca-be32-43ce-85ff-f5611e4ce129",
+      "Concept": "Explanation Method",
+      "Instance": "/Tabular/LIME",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 1212,
+        "y": 612
+      },
+      "params": {
+        "output_classes": "",
+        "top_classes": "",
+        "num_features": "5"
+      }
+    },
+    "1582ff0f-11de-47d4-a639-d6b34c6ec2cd": {
+      "id": "1582ff0f-11de-47d4-a639-d6b34c6ec2cd",
+      "Concept": "Confirm Question",
+      "Instance": "Evaluate",
+      "description": "",
+      "properties": {
+        "question": "Would you like to answer a questionnaire to evaluate your experience with iSee?",
+        "variable": "evaluate_proceed"
+      },
+      "display": {
+        "x": 1488,
+        "y": 420
+      }
+    }
+  },
+  "display": {
+    "camera_x": 101.00000181794167,
+    "camera_y": 233.10000005364418,
+    "camera_z": 0.5,
+    "x": -12,
+    "y": -192
+  }
+}

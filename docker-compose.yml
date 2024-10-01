@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    image: lasaljayawardena/isee_dg_llm  # Use the prebuilt image
+    ports:
+      - "80:80"  # Mapping the container port 80 to host port 80
+    volumes:
+      - .:/app  # Mount the current directory to the container's /app directory
+    container_name: isee_dg
+    restart: always  # Optional: Ensures the container restarts if it crashes

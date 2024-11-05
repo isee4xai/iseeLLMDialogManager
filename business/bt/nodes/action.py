@@ -149,6 +149,10 @@ class GreeterNode(QuestionNode):
             q.responseOptions = None
             _question = json.dumps(q.__dict__, default=lambda o: o.__dict__, indent=4)
 
+            # api call to db here
+            chat_history = self.co.logger.json_history()
+            
+
             await self.co.send(_question)
 
         self.status = State.SUCCESS

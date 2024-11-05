@@ -6,6 +6,7 @@ import business.storage as s
 from business.bt.nodes.type import State
 from business.bt.llm_pipeline import *
 from typing import List, Optional, Callable
+import traceback
 
 
 class LLMClarificationQuestionNode(node.Node):
@@ -17,7 +18,7 @@ class LLMClarificationQuestionNode(node.Node):
     def __init__(self, id: str, variable: str = None, clarification_variable: str = None) -> None:
         super().__init__(id)
         self.question = "Did you understand the previous explanation?"
-        self.clarification_question = "Would you like a different explanation or an elaboration on the existing one?"
+        self.clarification_question = "Would you like an elaboration on the existing explanation or a different query regarding other explainers in Isee? \n Please Type in your Question in the below text box"
         self.variable = variable or "clarification_response"
         self.clarification_variable = clarification_variable or "clarification_choice"
         
@@ -118,6 +119,25 @@ class LLMClarificationQuestionNode(node.Node):
                 f.write(response.json())
 
             main_response = response.choices[0].message.content
+            main_response = post_process_input_text(main_response)
+
+            with open("post_process_llm_response.json", "w") as f:
+                f.write(response.json())
+
+            try: 
+                main_response = clean_and_convert_to_html(main_response)
+            except Exception as e:
+                print(e)
+                error_details = {
+                    "error": str(e),
+                    "type": type(e).__name__,
+                    "traceback": traceback.format_exc(),
+                    "timestamp": datetime.utcnow().isoformat(),
+                }
+
+                # Save the error details as a JSON file
+                with open("error_log_clean.json", "w") as f:
+                    json.dump(error_details, f, indent=4)
 
             # Reinsert images to the response
             images_dict = {int(k): v for k, v in images_dict.items()}

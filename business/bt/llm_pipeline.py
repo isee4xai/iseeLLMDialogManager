@@ -6,24 +6,201 @@ from collections import OrderedDict
 
 from openai import OpenAI
 import os
+from pinecone import Pinecone, ServerlessSpec
+from langchain.vectorstores import Pinecone as PineconeVectorStore
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.schema import Document
+from uuid import uuid4
 
 from business.bt.base_llm import *
-from dotenv import load_dotenv
 
-load_dotenv()
 
-OPENAI_API_KEY = os.environ['OPENAI_API_KEY'] 
-HELICONE_API_KEY = os.environ['HELICONE_API_KEY']
-
+API_KEY = os.environ['OPENAI_API_KEY'] 
+# Set API key as an environment variable
+os.environ["OPENAI_API_KEY"] = API_KEY
+os.environ["HELICONE_API_KEY"] = os.environ['HELICONE_API_KEY']
 
 # Directly when initializing the client for double assurance
 client = OpenAI(
-    api_key=OPENAI_API_KEY,
+    api_key=API_KEY,
     base_url="https://oai.hconeai.com/v1", 
     default_headers={
-        f"Helicone-Auth": "Bearer {HELICONE_API_KEY}"
+        "Helicone-Auth": f"Bearer {os.environ['HELICONE_API_KEY']}"
     }
 )
+
+# Load environment variables or set your API keys directly
+OPENAI_API_KEY = os.environ['OPENAI_API_KEY'] 
+PINECONE_API_KEY = os.environ['PINECONE_API_KEY']
+PINECONE_ENV = os.environ['PINECONE_REGION']
+
+# Initialize OpenAI Embeddings
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+openai_embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
+
+# Initialize Pinecone instance
+pc = Pinecone(api_key=PINECONE_API_KEY)
+
+# Create or connect to Pinecone index
+index_name = "explainers-index"
+if index_name not in [index_info["name"] for index_info in pc.list_indexes()]:
+    pc.create_index(
+        name=index_name,
+        dimension=1536,  # OpenAI embedding dimension
+        metric="cosine",
+        spec=ServerlessSpec(cloud="aws", region=PINECONE_ENV)
+    )
+    print(f"Index '{index_name}' created successfully.")
+
+# Wait until the index is ready
+while not pc.describe_index(index_name).status["ready"]:
+    print("Waiting for index to be ready...")
+    time.sleep(1)
+
+# Get the index
+index = pc.Index(index_name)
+
+# Initialize the updated Pinecone vector store with required parameters
+vector_store = PineconeVectorStore(
+    index=index,
+    embedding=openai_embeddings,
+    text_key="page_content",  # Key in Document schema to use as text content
+)
+
+print("Pinecone vector store initialized.")
+
+def identify_dataset_and_explainers(input_text: str, openai_model) -> Tuple[List[str], List[str]]:
+    """
+    Identifies the types of datasets and explainers being discussed in the input text using the OpenAI model.
+    Returns a tuple containing a list of dataset types and a list of explainer names.
+    """
+    prompt = f"""
+Given the following text:
+
+{input_text}
+
+Identify the types of datasets being discussed (e.g., 'Multivariate tabular', 'Multivariate time series', 'Univariate time series', 'Image', 'Text', etc.), and list the names of explainers mentioned.
+
+Provide the output in the following JSON format:
+
+{{
+    "DatasetTypes": ["dataset_type_1", "dataset_type_2", ...],
+    "Explainers": ["explainer_name_1", "explainer_name_2", ...]
+}}
+
+Your response:
+"""
+    response_text = openai_model.inference_with_json(prompt)
+    # Parse the response as JSON
+    try:
+        response_json = json.loads(response_text.choices[0].message.content)
+        dataset_types = response_json.get("DatasetTypes", [])
+        explainers_list = response_json.get("Explainers", [])
+        # Clean up whitespace
+        dataset_types = [dt.strip() for dt in dataset_types]
+        explainers_list = [ex.strip() for ex in explainers_list]
+        return dataset_types, explainers_list
+    except json.JSONDecodeError as e:
+        print(f"Failed to parse JSON: {e}")
+        print("Response was:", response_text)
+        return [], []
+
+def query_explainers(dataset_types: List[str], explainers_list: List[str], k_per_type: int = 5) -> Dict[str, List[Document]]:
+    """
+    Queries the vector store to retrieve relevant explainers based on the dataset types and explainer names.
+    Returns a dictionary mapping keys (dataset types and explainer names) to lists of Documents.
+    """
+    explainers_per_key = {}
+    # Query based on dataset types
+    for dt in dataset_types:
+        # Build a filter for the dataset type
+        filter = {
+            "dataset_type": dt
+        }
+        results = vector_store.similarity_search(
+            query=dt,
+            k=k_per_type,
+            filter=filter
+        )
+        explainers_per_key[dt] = results
+
+    # Query based on explainer names without filtering
+    for explainer_name in explainers_list:
+        results = vector_store.similarity_search(
+            query=explainer_name,
+            k=k_per_type
+            # No filter here, as per your request
+        )
+        explainers_per_key[explainer_name] = results
+
+    return explainers_per_key
+
+def refine_response(input_text: str, explainers_per_key: Dict[str, List[Document]], openai_model) -> str:
+    """
+    Refines the response using the retrieved explainers and the OpenAI model.
+    """
+    explainer_descriptions = ""
+    for key, explainers in explainers_per_key.items():
+        explainer_descriptions += f"\nFor '{key}' (found {len(explainers)} explainers):\n"
+        explainer_descriptions += str(explainers)
+        explainer_descriptions += "\n"
+
+    prompt = f"""
+Our current response is provided below:
+
+{input_text}
+
+Based on this, we have identified internal explainers relevant within our system:
+
+{explainer_descriptions}
+
+Provide a refined explanation, substituting the internal explainer information where appropriate. 
+To identify when it is appropriate: consider if its an expansion on an explainer, or an explanation on several explainers. If so substitute.
+If it is a genral text no need to substitute at all.If talks about task functionality or other non-explainer user query responses dont subtitute.
+If the same explainer is present internally, mention the explainer name (e.g., '/Tabular/LIME') in the description.
+Preserve the same current i.e if the current response is HTML.
+Reference that the Isee Platform (our system) has such explainers and the user can try them out, Only if ti srlevant to add the explainer or refine. If no refinement is needed dont apply this or mention this.
+If no explainers are there for ISee, don't explicitly mention it, because we may have missed it
+Essentially, the response is for a user query, and if the user is curious about other explanations or explainers, we can promote existing ones in our system.
+Return Your output enclosed in Valid HTML tags. Enclose your output output with a <div> </div>. Start like this and I need to embed the output inside a html container. The HTML output is very important.
+"""
+    response_text = openai_model.inference(prompt)
+    return response_text.choices[0].message.content
+
+
+
+
+def post_process_input_text(input_text: str) -> str:
+    """
+    Processes the input text to identify dataset types, retrieve explainers, and refine the response.
+    """
+    openai_model = GPT_4o_post_processor_model
+
+    # Step 1: Identify dataset types and explainers
+    dataset_types, explainers_list = identify_dataset_and_explainers(input_text, openai_model)
+    print(f"Identified dataset types: {dataset_types}")
+    print(f"Identified explainers: {explainers_list}")
+
+    if not dataset_types and not explainers_list:
+        print("No dataset types or explainers identified.")
+        return input_text
+
+    # Step 2: Query explainers from vector store
+    explainers_per_key = query_explainers(dataset_types, explainers_list, k_per_type=5)
+
+    total_explainers = sum(len(explainers) for explainers in explainers_per_key.values())
+    print(f"Retrieved {total_explainers} explainers.")
+
+    for key, explainers in explainers_per_key.items():
+        print(f"Found {len(explainers)} explainers for key '{key}'")
+
+    # Step 3: Refine response
+    if len(explainers_list) > 0:
+        refined_response = refine_response(input_text, explainers_per_key, openai_model)
+        return refined_response
+    else:
+        return input_text
+
 
 class GPT4o_Model(OpenAI_Model):
     """
@@ -41,8 +218,8 @@ class GPT4o_Model(OpenAI_Model):
         """
         # Set up default model and API key details, and initialize the client
         self.model = config.get("model", "gpt-4")
-        api_key = config.get("api_key", OPENAI_API_KEY)
-        helicone_key = HELICONE_API_KEY
+        api_key = config.get("api_key", os.getenv("OPENAI_API_KEY"))
+        helicone_key = os.getenv("HELICONE_API_KEY")
 
         # If no API key is provided in config or environment, raise an error
         if not api_key:
@@ -128,6 +305,43 @@ class GPT4o_Model(OpenAI_Model):
         # Return the generated text response
         return response
 
+    def generate_api_request_with_json(self, prompt_text: str, images_dict: Dict[str, str], max_tokens: Optional[int] = None) -> str:
+        """
+        Function to call the GPT-4o API with a prompt and associated images in base64 format.
+
+        :param prompt_text: The input text prompt for the model.
+        :param images_dict: A dictionary where keys are image numbers and values are base64-encoded images.
+        :param max_tokens: Optional maximum number of tokens for the response. Only included if provided.
+        :return: The generated text from the GPT-4 API.
+        """
+        # Construct message content with the prompt and base64-encoded images
+        message_content = [{"type": "text", "text": prompt_text}]
+        for image_num, base64_image in images_dict.items():
+            message_content.append({
+                "type": "image_url",
+                "image_url": {
+                    "url": f"data:image/jpeg;base64,{base64_image}"
+                }
+            })
+
+        # API call to the OpenAI GPT-4 model
+        response = self.client.chat.completions.create(
+            model=self.model,
+            temperature=self.temperature,
+            messages=[
+                {
+                    "role": "user",
+                    "content": message_content
+                }
+            ],
+            # Only pass max_tokens if provided
+            **({"max_tokens": max_tokens} if max_tokens else {}),
+            response_format = {"type": "json_object"}
+        )
+
+        # Return the generated text response
+        return response
+
     def inference(self, prompt_text: str, images_dict: Dict[str, str] = {}, args: Dict[str, Any] = {}) -> str:
         """
         Perform inference using the GPT-4 model via the OpenAI client call method.
@@ -142,8 +356,22 @@ class GPT4o_Model(OpenAI_Model):
         # Generate the API request using the prompt and images
         return self.generate_api_request(prompt_text, images_dict, max_tokens)
 
+    def inference_with_json(self, prompt_text: str, images_dict: Dict[str, str] = {}, args: Dict[str, Any] = {}) -> str:
+        """
+        Perform inference using the GPT-4 model via the OpenAI client call method.
+
+        :param prompt_text: The input text prompt for the model.
+        :param images_dict: Dictionary where keys are image numbers and values are base64-encoded image data.
+        :param args: Additional arguments, including max_tokens, temperature, etc.
+        :return: The generated text response from the GPT-4 API.
+        """
+        max_tokens = args.get("max_tokens", None)  # Optional max_tokens argument
+
+        # Generate the API request using the prompt and images
+        return self.generate_api_request_with_json(prompt_text, images_dict, max_tokens)
+
 GPT_4o_CONFIG = {
-    "model": "gpt-4o",
+    "model": "gpt-4o-2024-08-06",
     "api_key": os.environ["OPENAI_API_KEY"],
     "temperature": 0.0,
 }
@@ -247,6 +475,69 @@ def extract_base64_data(data_url):
     else:
         return None
 
+import re
+import markdown
+
+def clean_and_convert_to_html(content: str) -> str:
+    """
+    Cleans the input content by removing code fences or markers (e.g., ```html, ```markdown, ```whatever)
+    from the beginning and end of the string. Detects if the content is Markdown or HTML, and converts
+    Markdown content to HTML.
+
+    Args:
+        content (str): The input string containing code fences and either Markdown or HTML content.
+
+    Returns:
+        str: The cleaned content as HTML.
+
+    Examples:
+        >>> markdown_content = '''```markdown
+        ... # Header
+        ... This is a *Markdown* example.
+        ... ```'''
+        >>> clean_and_convert_to_html(markdown_content)
+        '<h1>Header</h1>\\n<p>This is a <em>Markdown</em> example.</p>'
+
+        >>> html_content = '''```html
+        ... <p>This is valid HTML content.</p>
+        ... ```'''
+        >>> clean_and_convert_to_html(html_content)
+        '<p>This is valid HTML content.</p>'
+    """
+    # Strip leading and trailing whitespace
+    content = content.strip()
+
+    # Remove starting code fence and any language specifier
+    content = re.sub(r'^```[\w\s]*\n', '', content)
+
+    # Remove ending code fence
+    content = re.sub(r'\n```$', '', content)
+
+    # Strip again in case there was whitespace after removing code fences
+    cleaned_content = content.strip()
+
+    # Check if the content contains HTML tags
+    def contains_html_tags(text: str) -> bool:
+        """
+        Checks if the text contains HTML tags.
+
+        Args:
+            text (str): The text to check.
+
+        Returns:
+            bool: True if HTML tags are found, False otherwise.
+        """
+        html_tag_pattern = re.compile(r'<[^>]+>')
+        return bool(html_tag_pattern.search(text))
+
+    if contains_html_tags(cleaned_content):
+        # Assume it's already valid HTML
+        return cleaned_content
+    else:
+        # Convert Markdown to HTML
+        return markdown.markdown(cleaned_content)
+
+
 # Function to extract node properties, images, and explanations
 def extract_rich_properties(json_data):
     # Get node properties text and explanations
@@ -313,7 +604,8 @@ When answering the question, don’t reference the behavior tree or the user cha
 In your reference dont reoeat teh suer chat histroy ever. Dont say according to the chat history. Just answer the question as QA Assistant.
 Use the chat history for the explanation as guided context to understand what position the user is in in understanding the system.
 You can use the history to elaborate on certain points or make references to improve your current answer.
-Return Your output enclosed in Valid HTML tags. Enclose your output output with a <div> </div>. Start like this and I need to embed the output inside a html container
+If the context dont have an image, dont say that you are unable to analyze or provide details about the image. Address the query without it.
+Return Your output enclosed in Valid HTML tags. Enclose your output output with a <div> </div>. Start like this and I need to embed the output inside a html container. The HTML output is very important.
 """)
     return template.substitute(
         behavior_tree_history=behavior_tree_history,
@@ -502,3 +794,9 @@ def generate_clarification_history(latest_clarification_group):
 
     return clarification_history
     
+GPT_4o_CONFIG = {
+    "model": "gpt-4o-2024-08-06",
+    "api_key": os.environ["OPENAI_API_KEY"],
+    "temperature": 0.0,
+}
+GPT_4o_post_processor_model = GPT4o_Model(GPT_4o_CONFIG)

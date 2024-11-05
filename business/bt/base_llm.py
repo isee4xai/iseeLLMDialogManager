@@ -314,3 +314,5 @@ class OpenAI_Model(BaseAIModel):
                 raise ValueError("Each message must have 'role' and 'content' keys.")
             if message["role"] not in valid_roles:
                 raise ValueError(f"Invalid role '{message['role']}'. Role must be one of {valid_roles}.")
+
+

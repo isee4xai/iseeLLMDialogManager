@@ -6,36 +6,39 @@ from collections import OrderedDict
 
 from openai import OpenAI
 import os
+import time
+
 from pinecone import Pinecone, ServerlessSpec
 from langchain.vectorstores import Pinecone as PineconeVectorStore
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.schema import Document
 from uuid import uuid4
+from dotenv import load_dotenv
 
 from business.bt.base_llm import *
 
 
-API_KEY = os.environ['OPENAI_API_KEY'] 
-# Set API key as an environment variable
-os.environ["OPENAI_API_KEY"] = API_KEY
-os.environ["HELICONE_API_KEY"] = os.environ['HELICONE_API_KEY']
 
-# Directly when initializing the client for double assurance
-client = OpenAI(
-    api_key=API_KEY,
-    base_url="https://oai.hconeai.com/v1", 
-    default_headers={
-        "Helicone-Auth": f"Bearer {os.environ['HELICONE_API_KEY']}"
-    }
-)
+# Load environment variables (or read .env file)
+load_dotenv()
 
-# Load environment variables or set your API keys directly
 OPENAI_API_KEY = os.environ['OPENAI_API_KEY'] 
+HELICONE_API_KEY = os.environ['HELICONE_API_KEY']
 PINECONE_API_KEY = os.environ['PINECONE_API_KEY']
 PINECONE_ENV = os.environ['PINECONE_REGION']
 
+
+# Directly when initializing the client for double assurance
+client = OpenAI(
+    api_key=OPENAI_API_KEY,
+    base_url="https://oai.hconeai.com/v1", 
+    default_headers={
+        "Helicone-Auth": f"Bearer {HELICONE_API_KEY}"
+    }
+)
+
+
 # Initialize OpenAI Embeddings
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 openai_embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
 
 # Initialize Pinecone instance
@@ -372,7 +375,7 @@ class GPT4o_Model(OpenAI_Model):
 
 GPT_4o_CONFIG = {
     "model": "gpt-4o-2024-08-06",
-    "api_key": os.environ["OPENAI_API_KEY"],
+    "api_key":OPENAI_API_KEY,
     "temperature": 0.0,
 }
 GPT_4o_model = GPT4o_Model(GPT_4o_CONFIG)
@@ -796,7 +799,7 @@ def generate_clarification_history(latest_clarification_group):
     
 GPT_4o_CONFIG = {
     "model": "gpt-4o-2024-08-06",
-    "api_key": os.environ["OPENAI_API_KEY"],
+    "api_key": OPENAI_API_KEY,
     "temperature": 0.0,
 }
 GPT_4o_post_processor_model = GPT4o_Model(GPT_4o_CONFIG)

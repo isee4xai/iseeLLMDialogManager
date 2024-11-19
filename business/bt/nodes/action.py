@@ -3,6 +3,7 @@ from business.bt.nodes.type import State,TargetType
 import business.coordinator as c
 from datetime import datetime
 import json
+import os
 import business.storage as s
 import business.bt.nodes.html_format as html
 import pandas as pd
@@ -102,6 +103,33 @@ class ConfirmNode(QuestionNode):
         if (self.status == State.SUCCESS):
             self.status = State.FAILURE
 
+def save_chat_history(logger, folder_path='./chat_logs'):
+    """
+    Saves chat history to a specified folder with a timestamped filename.
+
+    Args:
+        logger: The logger instance containing the chat history.
+        folder_path (str): The path to the folder where the chat history will be saved.
+
+    Returns:
+        str: The full path of the saved file.
+    """
+    # Ensure the folder exists
+    os.makedirs(folder_path, exist_ok=True)
+
+    # Generate a readable, timestamped filename
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    filename = f"chat_history_{timestamp}.json"
+
+    # Full file path
+    file_path = os.path.join(folder_path, filename)
+
+    # Save the chat history
+    with open(file_path, 'w') as f:
+        json.dump(logger.json_history(), f, indent=4)  # Add indent for readability
+
+    print(f"Chat history saved to: {file_path}")
+    return file_path
 
 class GreeterNode(QuestionNode):
     def __init__(self, id) -> None:
@@ -144,14 +172,13 @@ class GreeterNode(QuestionNode):
         else:
             _question = "Thank you for using iSee!" +"\n"
             _question += "See you again soon!"
+            # api call to db here
+            chat_history = self.co.logger.json_history()
+            save_chat_history(self.co.logger)
 
             q = s.Question(self.id, _question, s.ResponseType.INFO.value, False)
             q.responseOptions = None
-            _question = json.dumps(q.__dict__, default=lambda o: o.__dict__, indent=4)
-
-            # api call to db here
-            chat_history = self.co.logger.json_history()
-            
+            _question = json.dumps(q.__dict__, default=lambda o: o.__dict__, indent=4)          
 
             await self.co.send(_question)
 
